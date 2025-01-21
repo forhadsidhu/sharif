@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharif Ullah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            color: #333;
+        }
+
+        .header {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .nav-buttons a {
+            text-decoration: none;
+            background: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background: #f0f0f0;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        #about, #experience, #projects, #skills, #contact {
+            background: #f9f9f9;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .experience-item {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 80%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .experience-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .experience-item p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .project-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-card .content {
+            padding: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .skills-list li {
+            background: #000;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+        }
+
+        #about {
+    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Times New Roman', Times, serif;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#about p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+
+
+
+#about p:last-of-type {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #444;
+    margin-top: 20px;
+}
+
+
+#about ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: blue;
+    justify-content:center;
+}
+
+#about ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+#about ul li::before {
+    content: '\2022'; /* Unicode for bullet point */
+    font-size: 1.5rem;
+    color: #007BFF; /* Blue color for emphasis */
+    margin-right: 10px;
+}
+
+#experience {
+    padding: 50px 20px;
+    font-family: 'Times New Roman', serif;
+}
+
+#experience h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #007BFF;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    margin: 20px 0;
+    padding-left: 50%;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.timeline-item:nth-child(odd) {
+    padding-left: 20px;
+    padding-right: 50%;
+    text-align: right;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+.timeline-content {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #007BFF;
+}
+
+.timeline-content p {
+    margin: 10px 0 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-card {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-card .content {
+    padding: 15px;
+    background: #fff;
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.project-card p {
+    margin: 0 0 15px;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#projects {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    gap: 20px; /* Space between cards */
+    justify-content: center;
+}
+
+.project-card {
+    width: calc(50% - 20px); /* 50% width minus gap for two cards in a row */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  
+}
+
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 350px;
+    display: block;
+}
+
+.project-card .content {
+    padding: 15px;
+}
+
+.project-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.project-card p {
+    margin: 0 0 15px;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#contact {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#contact p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#contact li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+#contact a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+        padding-right: 20px;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-left: 40px;
+        padding-right: 20px;
+        text-align: left;
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+}
+
+
+
+
+    </style>
+    
+</head>
+<body>
+
+    <header class="header">
+        <img src="assets/sharif_profile.jpg" alt="Your Picture">
+        <h1>Sharif Ullah</h1>
+        <h2>Software Engineer</h2>
+        <div class="nav-buttons">
+            <a href="#about">About Me</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="/assets/updated_cv_sharif.pdf" target="_blank">Resume</a>
+
+        </div>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate software engineer with over 5 years of experience in developing innovative solutions across AI, ERP, and Fintech domains. My journey has been marked by successful deliveries of cutting-edge projects, including:  </p>
+        <ul>
+            <li>Developed an AI-powered MVP product for VML.</li>
+            <li>Created multiple AI Proof-of-Concepts (PoCs) for Japanese clients.</li>
+            <li>Designed a comprehensive ERP solution tailored for the software industry.</li>
+            <li>Build AI-based CCTV surveillance system for a London-based startup.</li>
+            <li>Developed a home loan software and mobile application for a Bangladesh government organization.</li>
+        </ul>
+        <p>My expertise lies in blending technical excellence with creative problem-solving to deliver impactful results. I thrive on leveraging technology to transform ideas into scalable solutions.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Assistant Programmer at Bangladesh House Building Finance Corporation</h3>
+                    <span class="timeline-date">Feb 2024 - Present</span>
+                    <p>Developed their very first home loan software and Mobile apps.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Leed Developer at PeekAI Ltd</h3>
+                    <span class="timeline-date">Feb 2024 - Aug 2024</span>
+                    <p>Developed CCTV surveillance system using Yolov8 Openvino Py(QT)</p>
+                </div>
+            </div>
+
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>System Developer at WundermanThompson Dhaka</h3>
+                    <span class="timeline-date">Sep 2022 - Feb 2024</span>
+                    <p>Developed their AI MVP product called Reveal using Emotion Detection AI model</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Senior Software Engineer at BJIT Limited</h3>
+                    <span class="timeline-date">Aug 2021 - Sep  2022</span>
+                    <p>Developed Witz ERP software for Japan software company using Odoo python,AWS EC2</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Senior Software(AI) at BJIT Limited</h3>
+                    <span class="timeline-date">Jan 2019 - Aug  2021</span>
+                    <p>Developed Some AI PoC and Railcrossing  surveillance and person activity system for japan railway</p>
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+    
+    
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <div class="project-card">
+                <img src="assets/esheba.png" alt="Project 1">
+                <div class="content">
+                    <h3>Home Loan Software of BHBFC</h3>
+                    <p>Developed using Oracle Cloud, HTML, CSS, Java Spring Boot, Thymeleaf, AJAX, jQuery. Users can apply for a home loan and get live status of their home loan file using the dashboard.</p>
+                    <a href="https://esheba.bhbfc.gov.bd/" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <img src="assets/reveal.png" alt="Project 2">
+                <div class="content">
+                    <h3>Reveal-AI DATA product of VML</h3>
+                    <p>AI MVP product of VML used emotion analysis of user for evaluating the campaign video. Used GCP,Python,Emotion model,Flask,FastAPI,Streamlit,html,css,js.</p>
+                    <a href="https://www.vml.com/reveal" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="assets/peek_ai.jpg" alt="Project 3">
+                <div class="content">
+                    <h3>Peek AI</h3>
+                    <p>Developed surveillance system using Python,Object Detection,Pose Estimation,YoloV8,OpenVino,py(QT).</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="assets/erp.png" alt="Project 3">
+                <div class="content">
+                    <h3>Witz ERP</h3>
+                    <p>Developed WitZ ERP software using Odoo python,js,AWS EC2.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="assets/railcrossing.png" alt="Project 3">
+                <div class="content">
+                    <h3>Railcrossing Person activity</h3>
+                    <p>Developed this using object detection yolo,python,.NET pose Estimation.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="assets/mobile_app.png" alt="Project 3">
+                <div class="content">
+                    <h3>BHBFC Mobile App</h3>
+                    <p>Developed mobile app using Flutter for BHBFC</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li>Python</li>
+            <li>Java Spring Boot</li>
+            <li>Flask</li>
+            <li>Fast API</li>
+            <li>C++</li>
+            <li>Odoo</li>
+            <li>Django</li>
+            <li>Deep learning</li>
+            <li>Machine Learning</li>
+            <li>GCP</li>
+            <li>AWS</li>
+
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>You can reach me via email or connect with me on LinkedIn:</p>
+        <ul>
+            <li>
+                <strong>Email:</strong> 
+                <a href="mailto:md.sharif.ullah.forhad@gmail.com">md.sharif.ullah.forhad@gmail.com</a>
+            </li>
+            <li>
+                <strong>LinkedIn:</strong> 
+                <a href="https://www.linkedin.com/in/sharif-ullah-781414139/?originalSubdomain=bd" target="_blank">
+                    Sharif Ullah's LinkedIn Profile
+                </a>
+            </li>
+        </ul>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2025 Sharif Ullah. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
