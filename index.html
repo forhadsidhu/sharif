@@ -89,6 +89,72 @@
             padding: 20px;
         }
 
+        .education-section {
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.education-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left:30%;
+}
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.education-year {
+  flex: 0 0 120px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #007acc;
+}
+
+.education-details {
+  flex: 1;
+}
+
+.education-details h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.education-details p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .education-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .education-year {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+  }
+}
+
+
         .experience-item {
             background: #fff;
             border-radius: 10px;
@@ -169,6 +235,83 @@
             background: #000;
             color: #fff;
         }
+
+        .research-section {
+  font-family: Arial, sans-serif;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.research-section h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.research-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.research-image {
+  flex: 1;
+  max-width: 40%;
+}
+
+.research-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.research-text {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.research-text h3 {
+  color: #007acc;
+  margin-bottom: 10px;
+}
+
+.research-text ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.research-text li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .research-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .research-image {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .research-text {
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+
+
+
 
         #about {
     background: linear-gradient(135deg, #ffffff, #f7f7f7);
@@ -524,9 +667,13 @@
             <a href="#about">About Me</a>
             <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
+            <a href="#education-section">Education</a>
+            <a href="#research-section">Research</a>
+            
+
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
-            <a href="/assets/updated_cv_sharif.pdf" target="_blank">Resume</a>
+            <a href="https://drive.google.com/file/d/1ktSxh8OCRgGpXNfTgOxrARZ6equvmEIs/view?usp=sharing" target="_blank">Resume</a>
 
         </div>
     </header>
@@ -586,7 +733,7 @@
             <div class="timeline-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
-                    <h3>Senior Software(AI) at BJIT Limited</h3>
+                    <h3>Software Engineer(AI) at BJIT Limited</h3>
                     <span class="timeline-date">Jan 2019 - Aug  2021</span>
                     <p>Developed Some AI PoC and Railcrossing  surveillance and person activity system for japan railway</p>
                 </div>
@@ -647,10 +794,66 @@
                     <p>Developed mobile app using Flutter for BHBFC</p>
                 </div>
             </div>
+            <div class="project-card">
+                <img src="assets/yoga.JPG" alt="Project 3">
+                <div class="content">
+                    <h3>Yoga Pose Detection</h3>
+                    <p>Developed Yoga pose detection using p5.js deep learning</p>
+                    <a href="https://github.com/forhadsidhu/Yoga-pose-detection" target="_blank" class="project-link">View Project</a>
+                </div>
+            </div>
 
 
         </div>
     </section>
+
+    <div class="education-section" id="education-section">
+        <h2>Educational Background</h2>
+        <div class="education-list">
+          <div class="education-item">
+            <div class="education-year">2014-2018</div>
+            <div class="education-details">
+                <h3>Chittagong University of Engineering and technology(CUET)</h3>
+              <p>Bachelor of Computer Science  Science Engineering</p>
+           
+             
+            </div>
+          </div>
+         
+      </div>
+      
+
+
+    <div class="research-section" id="research-section">
+        <h2>Research Experience</h2>
+        <div class="research-content">
+          <div class="research-image">
+            <img src="assets/asd_image.jpg" alt="ASD Research" />
+          </div>
+          <div class="research-text">
+            <h3>Multi-Modal Based Autism Spectrum Disorder (ASD)</h3>
+            <ul>
+              <li>
+                Conducting research on using pose estimation, emotion, audio, and video techniques to identify behavioral
+                patterns associated with Autism Spectrum Disorder.
+              </li>
+              <li>Currently training an emotion detection model using ResNet50 to classify emotional states from facial expressions.</li>
+              <li>Developing a video classification model using pose video data to differentiate between ASD and non-ASD behaviors.</li>
+              <li>Training a voice classification model to analyze behavioral patterns from voice data.</li>
+            </ul>
+            <h3>Human Activity Recognition</h3>
+            <ul>
+              <li>
+                Developing models to analyze human activities in various environments using computer vision techniques.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+
+      
+
 
     <section id="skills">
         <h2>Skills</h2>
