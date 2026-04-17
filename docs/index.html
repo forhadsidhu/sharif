@@ -1,1213 +1,746 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sharif Ullah</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sharif Ullah — AI Engineer & Researcher</title>
+    <meta name="description" content="Portfolio of Sharif Ullah — AI Engineer, Full-Stack Developer, and Researcher specializing in LLMs, Computer Vision, and Multi-Agent Systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+        :root {
+            --bg: #0a0a0b;
+            --bg-card: #111113;
+            --bg-card-hover: #19191c;
+            --surface: #1a1a1f;
+            --border: rgba(255,255,255,0.06);
+            --text: #e8e8ec;
+            --text-muted: #8a8a9a;
+            --accent: #6c63ff;
+            --accent-glow: rgba(108,99,255,0.15);
+            --accent2: #00d4aa;
+            --accent3: #ff6b6b;
+            --gradient: linear-gradient(135deg, #6c63ff, #00d4aa);
+        }
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+        /* NAV */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(10,10,11,0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo {
+            font-weight: 800; font-size: 1.3rem;
+            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text; text-decoration: none;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted); text-decoration: none; font-size: 0.85rem;
+            font-weight: 500; letter-spacing: 0.02em; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(assets/sharif_profile.jpg);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Sharif Ullah</a></h1>
-				<span class="position"><a href="#">Software Engineer</a> in Bangladesh</span>
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="services">Services</a></li>
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>
-						<li><a href="#" data-nav-section="work">Work</a></li>
-						<li><a href="#" data-nav-section="freelance_work">Freelance Porject</a></li>
-						<li><a href="#" data-nav-section="contest_programming">Contest Programming</a></li>
-						<li><a href="#" data-nav-section="research">Research</a></li>
-						<li><a href="#" data-nav-section="research_publication">Publications</a></li>
-						<li><a href="#" data-nav-section="contact">Contact</a></li>
-					</ul>
-				</div>
-			</nav>
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed; top: 0; right: -100%; width: 70%; height: 100vh;
+                background: var(--bg-card); flex-direction: column;
+                padding: 5rem 2rem; gap: 1.5rem; transition: right 0.3s;
+                border-left: 1px solid var(--border);
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.1rem; }
+            .hamburger { display: block; z-index: 1001; }
+        }
 
-			
+        /* HERO */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center;
+            padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -50%; right: -20%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite alternate;
+        }
+        @keyframes pulse { 0% { opacity: 0.3; transform: scale(1); } 100% { opacity: 0.6; transform: scale(1.2); } }
+        .hero-inner {
+            max-width: 1200px; margin: 0 auto; width: 100%;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+            position: relative; z-index: 1;
+        }
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 0.5rem;
+        }
+        .hero-text h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin: 1rem 0 1.5rem; max-width: 500px; }
+        .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+        .hero-tags span {
+            padding: 0.35rem 0.9rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600;
+            letter-spacing: 0.04em; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface);
+        }
+        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.75rem 1.8rem; border-radius: 100px; font-weight: 600;
+            font-size: 0.9rem; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none;
+        }
+        .btn-primary { background: var(--gradient); color: #fff; box-shadow: 0 4px 20px var(--accent-glow); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
+        .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+        .hero-image { display: flex; justify-content: center; }
+        .hero-image-wrapper {
+            width: 380px; height: 460px; border-radius: 24px; overflow: hidden;
+            border: 2px solid var(--border); position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+        }
+        .hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-image-wrapper::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+            background: linear-gradient(to top, rgba(10,10,11,0.6), transparent);
+        }
+        @media (max-width: 768px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-tags { justify-content: center; }
+            .hero-btns { justify-content: center; }
+            .hero-subtitle { margin-left: auto; margin-right: auto; }
+            .hero-image-wrapper { width: 260px; height: 320px; }
+            .hero-image { order: -1; }
+        }
 
-		</aside>
+        /* SECTIONS */
+        section { padding: 6rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.5rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1rem;
+        }
+        .section-desc { color: var(--text-muted); max-width: 600px; margin-bottom: 3rem; }
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li>
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Sharif Ullah</h1>
-						   					<h2>A highly ambitious technologist passionate about leveraging technology to simplify human life. Dedicated to making healthcare more affordable and accessible while enhancing its appeal through innovative solutions</h2>
-												<p><a  href="https://drive.google.com/file/d/1ktSxh8OCRgGpXNfTgOxrARZ6equvmEIs/view" class="btn btn-primary btn-learn" target="_blank">Download CV <i class="icon-download4"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				   	<li >
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner">
-					   					<div class="desc">
-						   					<h1>I am <br>Researcher</h1>
-												<h2>Focusing on analyzing Autism Spectrum Disorder (ASD) in children and developing early-stage detection methods to make diagnosis more accessible and effective</h2>
-												<p><a class="btn btn-primary btn-learn">View Portfolio <i class="icon-briefcase3"></i></a></p>
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>
-				  	</ul>
-			  	</div>
-			</section>
+        /* ABOUT */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+        .about-text p { color: var(--text-muted); margin-bottom: 1.2rem; }
+        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .stat-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 1.5rem; text-align: center; transition: border-color 0.3s;
+        }
+        .stat-card:hover { border-color: var(--accent); }
+        .stat-num { font-size: 2.2rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; }
+        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
-										<p><strong>Hi I'm Sharif</strong> </p>
-										<p style="color: black;">I am a passionate software engineer with over five years of experience in developing innovative solutions across AI, ERP, and Fintech domains. Throughout my journey, I have successfully delivered cutting-edge projects, including an AI-powered MVP product for VML and multiple AI Proof-of-Concepts (PoCs) for Japanese clients. I have also designed a comprehensive ERP solution tailored for the software industry, built an AI-based CCTV surveillance system for a London-based startup, and developed a home loan software and mobile application for a Bangladesh government organization. My expertise lies in blending technical excellence with creative problem-solving to deliver impactful results. I thrive on leveraging technology to transform ideas into scalable solutions.</p>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInLeft">
-									<div class="services color-1">
-										<span class="icon2"><i class="icon-bulb"></i></span>
-										<h3>UI Design</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInRight">
-									<div class="services color-2">
-										<span class="icon2"><i class="icon-globe-outline"></i></span>
-										<h3>Web Design</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInTop">
-									<div class="services color-3">
-										<span class="icon2"><i class="icon-data"></i></span>
-										<h3>Software</h3>
-									</div>
-								</div>
-								<div class="col-md-3 animate-box" data-animate-effect="fadeInBottom">
-									<div class="services color-4">
-										<span class="icon2"><i class="icon-phone3"></i></span>
-										<h3>Application</h3>
-									</div>
-								</div>
-							</div>
-							<div class="row" style="display: none;">
-								<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-									<div class="hire">
-										<h2>I am happy to know you <br>that 300+ projects done sucessfully!</h2>
-										<a href="#" class="btn-hire">Hire me</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+        /* PROJECT CARDS */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; }
+        .project-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            overflow: hidden; transition: all 0.4s; position: relative;
+        }
+        .project-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+        .project-card-body { padding: 1.5rem; }
+        .project-badge {
+            display: inline-block; padding: 0.25rem 0.7rem; border-radius: 100px;
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.8rem;
+        }
+        .badge-live { background: rgba(0,212,170,0.15); color: var(--accent2); }
+        .badge-ai { background: var(--accent-glow); color: var(--accent); }
+        .badge-saas { background: rgba(255,107,107,0.15); color: var(--accent3); }
+        .project-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+        .project-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; }
+        .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+        .project-tech span { padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: var(--surface); color: var(--text-muted); }
+        .project-links { display: flex; gap: 0.8rem; }
+        .project-links a { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; transition: 0.3s; }
+        .project-links a:hover { color: var(--accent2); }
+        @media (max-width: 480px) { .projects-grid { grid-template-columns: 1fr; } }
 
+        /* CHATBOT BANNER */
+        .chatbot-banner {
+            background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(0,212,170,0.08));
+            border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-top: 3rem;
+        }
+        .chatbot-banner h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem; }
+        .chatbot-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
+        .chatbot-item {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 1.2rem; display: flex; align-items: center; gap: 1rem; transition: 0.3s;
+        }
+        .chatbot-item:hover { border-color: var(--accent2); }
+        .chatbot-dot {
+            width: 10px; height: 10px; border-radius: 50%; background: var(--accent2);
+            box-shadow: 0 0 10px var(--accent2); animation: blink 2s ease-in-out infinite; flex-shrink: 0;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .chatbot-info { flex: 1; }
+        .chatbot-info strong { font-size: 0.9rem; display: block; }
+        .chatbot-info span { font-size: 0.78rem; color: var(--text-muted); }
+        .chatbot-info a { font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 600; }
 
-			
-			<section class="colorlib-services" data-section="services">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">What I do?</span>
-							<h2 class="colorlib-heading">Here are some of my expertise</h2>
-						</div>
-					</div>
-					<div class="row row-pt-md">
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-1">
-								<span class="icon">
-									<i class="icon-bulb"></i>
-								</span>
-								<div class="desc">
-									<h3>Innovative Ideas</h3>
-									<p>I am highly curious and passionate about transforming ideas into deliverable products. I have developed numerous AI-driven data MVPs, turning concepts into functional, impactful solutions</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-2">
-								<span class="icon">
-									<i class="icon-data"></i>
-								</span>
-								<div class="desc">
-									<h3>Software</h3>
-									<p>I have developed ERP, AI,Data,Fintech Solutions</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 text-center animate-box">
-							<div class="services color-3">
-								<span class="icon">
-									<i class="icon-phone3"></i>
-								</span>
-								<div class="desc">
-									<h3>Application</h3>
-									<p>I develope Mobile Applications</p>
-								</div>
-							</div>
-						</div>
-						
-					</div>
-				</div>
-			</section>
-			
-			<div id="colorlib-counter" class="colorlib-counters" style="background-image: url(images/cover_bg_1.jpg);" data-stellar-background-ratio="0.5">
-				<div class="overlay"></div>
-				<div class="colorlib-narrow-content">
-					<div class="row">
-					</div>
-					<div class="row">
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="309" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Cups of coffee</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="10" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Projects</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Clients</span>
-						</div>
-						<div class="col-md-3 text-center animate-box">
-							<span class="colorlib-counter js-counter" data-from="0" data-to="5" data-speed="5000" data-refresh-interval="50"></span>
-							<span class="colorlib-counter-label">Partners</span>
-						</div>
-					</div>
-				</div>
-			</div>
+        /* SKILLS */
+        .skills-categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+        .skill-group { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+        .skill-group h3 { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent); }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .skill-tags span {
+            padding: 0.3rem 0.8rem; border-radius: 8px; font-size: 0.78rem; font-weight: 500;
+            background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); transition: 0.3s;
+        }
+        .skill-tags span:hover { border-color: var(--accent); color: var(--text); }
 
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading animate-box">My Skills</h2>
-						</div>
-					</div>
-					  
-					<div class="row">
-						<!-- Languages -->
-						<div class="row">
-							<!-- Programming Languages -->
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>Python</h3>
-									<div class="progress">
-										<div class="progress-bar color-1" role="progressbar" aria-valuenow="95"
-											aria-valuemin="0" aria-valuemax="100" style="width:95%">
-											<span>95%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>C++</h3>
-									<div class="progress">
-										<div class="progress-bar color-2" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>Java</h3>
-									<div class="progress">
-										<div class="progress-bar color-3" role="progressbar" aria-valuenow="85"
-											aria-valuemin="0" aria-valuemax="100" style="width:85%">
-											<span>85%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>JavaScript</h3>
-									<div class="progress">
-										<div class="progress-bar color-4" role="progressbar" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100" style="width:75%">
-											<span>75%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<!-- Frameworks -->
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>TensorFlow</h3>
-									<div class="progress">
-										<div class="progress-bar color-5" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>Spring Boot</h3>
-									<div class="progress">
-										<div class="progress-bar color-5" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
+        /* TIMELINE */
+        .timeline { position: relative; padding-left: 2rem; }
+        .timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 2.5rem; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -2rem; top: 8px;
+            width: 14px; height: 14px; border-radius: 50%;
+            background: var(--accent); border: 3px solid var(--bg); z-index: 1;
+        }
+        .timeline-item h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem; }
+        .timeline-item .time { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-item p { font-size: 0.88rem; color: var(--text-muted); }
+        .badge-award {
+            display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px;
+            font-size: 0.7rem; font-weight: 700; background: rgba(255,215,0,0.15); color: #ffd700; margin-top: 0.3rem;
+        }
 
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>Flutter</h3>
-									<div class="progress">
-										<div class="progress-bar color-5" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>PyTorch</h3>
-									<div class="progress">
-										<div class="progress-bar color-6" role="progressbar" aria-valuenow="85"
-											aria-valuemin="0" aria-valuemax="100" style="width:85%">
-											<span>85%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>Django</h3>
-									<div class="progress">
-										<div class="progress-bar color-7" role="progressbar" aria-valuenow="90"
-											aria-valuemin="0" aria-valuemax="100" style="width:90%">
-											<span>90%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>Flask</h3>
-									<div class="progress">
-										<div class="progress-bar color-8" role="progressbar" aria-valuenow="85"
-											aria-valuemin="0" aria-valuemax="100" style="width:85%">
-											<span>85%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<!-- Cloud & Platforms -->
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>AWS Cloud</h3>
-									<div class="progress">
-										<div class="progress-bar color-9" role="progressbar" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100" style="width:75%">
-											<span>75%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>GCP</h3>
-									<div class="progress">
-										<div class="progress-bar color-10" role="progressbar" aria-valuenow="70"
-											aria-valuemin="0" aria-valuemax="100" style="width:70%">
-											<span>70%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<!-- AI & NLP -->
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>LLM (Large Language Models)</h3>
-									<div class="progress">
-										<div class="progress-bar color-11" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>VLM (Vision-Language Models)</h3>
-									<div class="progress">
-										<div class="progress-bar color-12" role="progressbar" aria-valuenow="75"
-											aria-valuemin="0" aria-valuemax="100" style="width:75%">
-											<span>75%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>Emotion Detection</h3>
-									<div class="progress">
-										<div class="progress-bar color-13" role="progressbar" aria-valuenow="85"
-											aria-valuemin="0" aria-valuemax="100" style="width:85%">
-											<span>85%</span>
-										</div>
-									</div>
-								</div>
-							</div>
+        /* FREELANCE */
+        .freelance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+        .freelance-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 1.5rem; transition: 0.3s;
+        }
+        .freelance-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .freelance-card h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .freelance-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem; }
 
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-								<div class="progress-wrap">
-									<h3>Object Detection</h3>
-									<div class="progress">
-										<div class="progress-bar color-13" role="progressbar" aria-valuenow="85"
-											aria-valuemin="0" aria-valuemax="100" style="width:85%">
-											<span>85%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						
-							<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-								<div class="progress-wrap">
-									<h3>Pose Estimation</h3>
-									<div class="progress">
-										<div class="progress-bar color-14" role="progressbar" aria-valuenow="80"
-											aria-valuemin="0" aria-valuemax="100" style="width:80%">
-											<span>80%</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+        /* EDUCATION */
+        .edu-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 2rem; max-width: 600px;
+        }
+        .edu-card h3 { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; }
+        .edu-card p { font-size: 0.9rem; color: var(--text-muted); }
 
-						
-					
-					</div>
-				</div>
-			</section>
+        /* RESEARCH */
+        .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+        .research-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 1.5rem; transition: 0.3s;
+        }
+        .research-card:hover { border-color: var(--accent); }
+        .research-card h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .research-card p { font-size: 0.85rem; color: var(--text-muted); }
+        .research-card .tag {
+            display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px;
+            font-size: 0.7rem; font-weight: 700; margin-bottom: 0.8rem;
+        }
+        .tag-review { background: rgba(255,165,0,0.15); color: #ffa500; }
+        .tag-prep { background: rgba(0,212,170,0.15); color: var(--accent2); }
+        .tag-sub { background: var(--accent-glow); color: var(--accent); }
 
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Education</span>
-							<h2 class="colorlib-heading animate-box">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Bachelor Degree Computer Science
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									         <div class="panel-body">
-									            <div class="row">
-										      		<div class="col-md-6">
-										      			<p>Chittagong University of Engineering & Technology(CUET)</p>
-										      		</div>
-										      		<div class="col-md-6">
-										      			<p>One of The Best Govt Engineering University in Bangladesh</p>
-										      		</div>
-										      	</div>
-									         </div>
-									    </div>
-									</div>
-									<div class="panel panel-default" style="display: none;">
-									    <div class="panel-heading" role="tab" id="headingTwo">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Bachelor Degree of Computer Science
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-									        <div class="panel-body">
-									            <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-													<ul>
-														<li>Separated they live in Bookmarksgrove right</li>
-														<li>Separated they live in Bookmarksgrove right</li>
-													</ul>
-									        </div>
-									    </div>
-									</div>
-									<div class="panel panel-default" style="display: none;">
-									    <div class="panel-heading" role="tab" id="headingThree">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Diploma in Information Technology
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-									        <div class="panel-body">
-									            <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>	
-									        </div>
-									    </div>
-									</div>
+        /* CP */
+        .cp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+        .cp-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 1.3rem; text-align: center; transition: 0.3s;
+        }
+        .cp-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .cp-card h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .cp-card p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+        .cp-card a { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; }
 
-									<div class="panel panel-default" style="display:none">
-									    <div class="panel-heading" role="tab" id="headingFour">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Diploma in Information Technology
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-									        <div class="panel-body">
-									            <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>	
-									        </div>
-									    </div>
-									</div>
+        /* CONTACT */
+        .contact-section { background: linear-gradient(180deg, var(--bg), #0f0f14); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .contact-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
+        .contact-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.6rem; transition: 0.3s; }
+        .contact-links a:hover { color: var(--accent); }
+        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+        .contact-form input, .contact-form textarea {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+            padding: 0.9rem 1.2rem; color: var(--text); font-family: 'Inter', sans-serif;
+            font-size: 0.9rem; outline: none; transition: 0.3s;
+        }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); }
+        .contact-form textarea { resize: vertical; min-height: 120px; }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
 
-									<div class="panel panel-default" style="display: none;">
-									    <div class="panel-heading" role="tab" id="headingFive">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">High School Secondary Education
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-									        <div class="panel-body">
-									            <p>Far far away, behind the word <strong>mountains</strong>, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>	
-									        </div>
-									    </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+        footer {
+            text-align: center; padding: 2rem;
+            border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted);
+        }
 
-			<section class="colorlib-experience" data-section="experience">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Experience</span>
-							<h2 class="colorlib-heading animate-box">Work Experience</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-				         <div class="timeline-centered">
+        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .divider { height: 1px; background: var(--border); margin: 0; border: none; }
+    </style>
+</head>
+<body>
 
+<nav class="nav">
+    <a href="#" class="nav-logo">SU.</a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#ai-projects">AI Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#freelance">Freelance</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
 
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-								<div class="timeline-entry-inner">
-									<div class="timeline-icon color-1">
-										<i class="icon-pen2"></i>
-									</div>
-									<div class="timeline-label">
-										<h2><a href="#">Assistant Programmer (Senior Officer)</a> <span>2024 - Present</span></h2>
-										<p>Currently working as an Assistant Programmer (Senior Officer) at Bangladesh House Building Finance Corporation (BHBFC), a government financial organization in Bangladesh. Developing their home loan software <strong>eSheba</strong> and a mobile application to enhance financial services. You can access the web version of eSheba at <a href="https://esheba.bhbfc.gov.bd/" target="_blank">eSheba Web Portal</a>. The mobile version is coming soon!</p>
-										<ul>
-											<li><strong>Loan Processing Web App:</strong> Developing various modules for a FinTech solution.</li>
-											<li><strong>Loan Processing Mobile App:</strong> Mobile version coming soon.</li>
-											<li><strong>Technologies:</strong> Java JEE, Spring Boot, Thymeleaf, HTML, CSS, JavaScript, Oracle Cloud, Flutter, Dart</li>
-										</ul>
-									</div>
-								</div>
-							</article>
-							
-							
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Sharif Ullah</span></h1>
+            <p class="hero-subtitle">AI Engineer &amp; Researcher building intelligent systems — from LLM-powered products and multi-agent architectures to computer vision and real-time analytics.</p>
+            <div class="hero-tags">
+                <span>LLMs &amp; RAG</span>
+                <span>Computer Vision</span>
+                <span>Multi-Agent AI</span>
+                <span>Full-Stack</span>
+                <span>Cloud (GCP / AWS)</span>
+            </div>
+            <div class="hero-btns">
+                <a href="https://drive.google.com/file/d/1ktSxh8OCRgGpXNfTgOxrARZ6equvmEIs/view" class="btn btn-primary" target="_blank">Download CV &#8595;</a>
+                <a href="#ai-projects" class="btn btn-outline">View Projects &#8594;</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-wrapper">
+                <img src="assets/sharif_profile.jpg" alt="Sharif Ullah">
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <div class="about-grid reveal">
+            <div class="about-text">
+                <p class="section-label">About Me</p>
+                <h2 class="section-title">Engineer. Builder. Researcher.</h2>
+                <p>I'm a passionate software engineer with 5+ years of experience delivering innovative solutions across AI, ERP, and Fintech. I've built production AI products for multinational agencies, government organizations, and startups across Bangladesh, Japan, Saudi Arabia, and the UK.</p>
+                <p>My work spans LLM-powered chatbots and RAG systems, computer vision surveillance platforms, emotion detection engines, multi-agent CRM automations, and full-stack SaaS products. I thrive on turning complex problems into scalable, impactful products.</p>
+                <p>I'm also an active researcher focusing on Autism Spectrum Disorder detection using multimodal deep learning — combining pose estimation, emotion recognition, and audio analysis.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Years Experience</div></div>
+                <div class="stat-card"><div class="stat-num">15+</div><div class="stat-label">Projects Delivered</div></div>
+                <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label">AI Products Live</div></div>
+                <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Countries Served</div></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-								<div class="timeline-entry-inner">
-									<div class="timeline-icon color-2">
-										<i class="icon-pen2"></i>
-									</div>
-									<div class="timeline-label">
-										<h2><a href="#">Lead Developer at Peek AI Ltd</a> <span>Feb 2024 - Aug 2024</span></h2>
-										<p>Developed a desktop application for a CCTV surveillance system using object detection and OpenVINO.</p>
-										<ul>
-											<li><strong>AI CCTV Surveillance System:</strong> Developed a surveillance system as both a Desktop App and a Web App using deep learning models.</li>
-											<li><strong>CPU Inference:</strong> Conducted research and development to optimize deep learning models for CPU inference.</li>
-											<li><strong>Technologies:</strong> Python (Qt), PySide, OpenVINO, Flask, Ultralytics YOLOv8, Pose Estimation, RunPod, OpenCV, OpenPose.</li>
-										</ul>
-										<p><strong>Demo:</strong> Check out the demo of our AI CCTV surveillance system on <a href="https://drive.google.com/file/d/1Fvg-z68nm5hVdaPi7i7DwBbxgGhIiyme/view?usp=drive_link" target="_blank">Demo Link</a>.</p>
-									</div>
-								</div>
-							</article>
-							
-							
+<hr class="divider">
 
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-								<div class="timeline-entry-inner">
-									<div class="timeline-icon color-1">
-										<i class="icon-pen2"></i>
-									</div>
-									<div class="timeline-label">
-										<h2><a href="#">System Developer at Wunderman Thompson Dhaka</a> <span>Sept. 2022 - Feb. 2024</span></h2>
-										<ul>
-											<li><strong>Reveal App:</strong> Developed Wunderman Thompson's MVP AI product "Reveal," implemented features, resolved issues, worked on ETL processes with the data team, built dashboards using Streamlit, wrote test cases, and managed backend development in Node.js and Python.</li>
-											<li><strong>ETL Pipeline for Dashboard:</strong> Developed API functions in FastAPI and Node.js, deployed on Google Cloud (Cloud Functions, Cloud Run) using Terraform, implemented CI/CD pipelines with Cloud Build, and added monitoring dashboards via Grafana.</li>
-											<li><strong>Data Analysis Tool:</strong> Designed and built an interactive data analysis tool using Streamlit.</li>
-											<li><strong>Micro Expression Model:</strong> Collaborated with the data team on deep learning models for micro-expression detection.</li>
-											<li><strong>Technologies:</strong> Python (Flask, FastAPI), Node.js, MySQL, HTML, CSS, GCP (Cloud Functions, Cloud Scheduler, App Engine, Cloud Run, Cloud Build, Pub/Sub), Terraform, Grafana, CI/CD, Pytest, Generative AI, Deep Learning, LangChain, Prompt Engineering.</li>
-											<li><strong>Reveal App Showcase:</strong> Check out the Reveal app in action on our social media platforms(This app released in EMEA region):
-												<ul>
-													<li><a href="https://www.facebook.com/WundermanThompson/videos/reveal/1649595072186341/" target="_blank">Facebook Video</a></li>
-													<li><a href="https://www.instagram.com/reel/CxWVweyvNHo/" target="_blank">Instagram Reel</a></li>
-												</ul>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</article>
-							
-							
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-								<div class="timeline-entry-inner">
-									<div class="timeline-icon color-3">
-										<i class="icon-trophy"></i>
-									</div>
-									<div class="timeline-label">
-										<h2><a href="#">Senior Software Engineer at BJIT Limited</a> <span>Sept. 2021 - May 2022</span></h2>
-										<h4 style="color: #f39c12;"><i class="icon-star"></i> Top Performer (Fiscal Year 2021-22)</h4>
-										<ul>
-											<li><strong>BJIT ERP:</strong> Developed an ERP system for japan based software company.</li>
-											<li><strong>Awarded as Top Performer:</strong> Recognized for outstanding contributions in software development and innovation.</li>
-										</ul>
-									</div>
-								</div>
-							</article>
-							
-							
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInLeft">
-								<div class="timeline-entry-inner">
-									<div class="timeline-icon color-3">
-										<i class="icon-pen2"></i>
-									</div>
-									<div class="timeline-label">
-										<h2><a href="#">Software Engineer at BJIT Limited</a> <span>Sept. 2021 - May 2022</span></h2>
-										<ul>
-											<li><strong>BJIT ERP:</strong> Developed an ERP system for BJIT Limited.</li>
-										</ul>
-									</div>
-								</div>
-							</article>
-							
-							<article class="timeline-entry animate-box" data-animate-effect="fadeInRight">
-								<div class="timeline-entry-inner">
-									<div class="timeline-icon color-4">
-										<i class="icon-pen2"></i>
-									</div>
-									<div class="timeline-label">
-										<h2><a href="#">Software Engineer (AI) at BJIT Limited</a> <span>Jan. 2019 - Aug. 2021</span></h2>
-										<ul>
-											<li><strong>Platform Application:</strong> Developed an AI-based application for Japan Railway to detect trains, analyze human activity at railway stations, and control rail-crossing barriers.</li>
-											<li><strong>Pose Estimation:</strong> Built a system using OpenPose to identify individuals using mobile phones while walking.</li>
-											<li><strong>Bengali OCR:</strong> Developed an OCR system to convert Bengali PDF files into editable text.</li>
-											<li><strong>Technologies:</strong> Python (Django), Deep Learning, Computer Vision, OpenVINO, C++, NumPy, Pandas, Scikit-learn.</li>
-										</ul>
-									</div>
-								</div>
-							</article>
-							
-					         <article class="timeline-entry begin animate-box" data-animate-effect="fadeInBottom">
-					            <div class="timeline-entry-inner">
-					               <div class="timeline-icon color-none">
-					               </div>
-					            </div>
-					         </article>
-					      </div>
-					   </div>
-				   </div>
-				</div>
-			</section>
+<!-- AI PROJECTS -->
+<section id="ai-projects">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Featured Work</p>
+            <h2 class="section-title">AI Projects</h2>
+            <p class="section-desc">Production AI systems I've designed, developed, and deployed — from emotion-aware campaign analytics to multi-agent CRM automation.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-ai">AI PRODUCT — VML</span>
+                    <h3>Reveal — Emotion-Driven Campaign Analytics</h3>
+                    <p>Built VML's flagship AI product that analyzes campaign videos by detecting viewer emotions in real-time. Combines emotion detection models, LLMs, Big Data pipelines, and Google Cloud Platform.</p>
+                    <div class="project-tech"><span>Emotion Detection</span><span>LLM</span><span>Big Data</span><span>GCP</span><span>FastAPI</span><span>Streamlit</span></div>
+                    <div class="project-links"><a href="https://www.vml.com/reveal" target="_blank">&#128279; Live App</a></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-saas">AI SaaS — HEALTHCARE</span>
+                    <h3>DoctorsTools.life — AI Medical Assistant</h3>
+                    <p>RAG-based AI platform helping doctors analyze medical reports, generate insights, and provide patient support with intelligent document understanding.</p>
+                    <div class="project-tech"><span>RAG</span><span>LLM</span><span>Document AI</span><span>Python</span><span>Healthcare</span></div>
+                    <div class="project-links"><a href="https://doctorstools.life" target="_blank">&#128279; Live App</a></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-saas">AI SaaS — EDTECH</span>
+                    <h3>SmartWorksheetAI — AI for ESL Teachers</h3>
+                    <p>Intelligent worksheet generation platform for ESL teachers with AI-powered question and image generation, customized for language learning.</p>
+                    <div class="project-tech"><span>LLM</span><span>Image Generation</span><span>NLP</span><span>EdTech</span></div>
+                    <div class="project-links"><a href="https://smartworksheetai.com" target="_blank">&#128279; Live App</a></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-ai">MULTI-AGENT AI</span>
+                    <h3>CRM Automation — Multi-Agent System</h3>
+                    <p>Multi-agent AI system automating end-to-end CRM operations using OpenClaw LLM and orchestrated agents for lead management and workflow automation.</p>
+                    <div class="project-tech"><span>Multi-Agent</span><span>OpenClaw LLM</span><span>CRM</span><span>Automation</span></div>
+                    <div class="project-links"><a href="http://173.212.246.248/" target="_blank">&#128279; Live Demo</a></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-live">LIVE — HOSPITALITY</span>
+                    <h3>AI Hotel Booking Chatbot (Saudi Arabia)</h3>
+                    <p>RAG-based chatbot for the hotel industry — users book rooms, inquire about services, and manage reservations through natural language conversation.</p>
+                    <div class="project-tech"><span>RAG</span><span>LLM</span><span>Chatbot</span><span>Hotel Booking</span></div>
+                    <div class="project-links">
+                        <a href="http://89.117.59.22/" target="_blank">&#128279; Live Chatbot</a>
+                        <a href="https://www.loom.com/share/8294a38e01f04b96abe9c431a68c3161" target="_blank">&#127909; Demo Video</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-live">LIVE — FINTECH</span>
+                    <h3>AI Chatbot — Govt Financial Org</h3>
+                    <p>RAG-powered chatbot for a government financial organization, assisting with loan inquiries, document guidance, and customer support.</p>
+                    <div class="project-tech"><span>RAG</span><span>LLM</span><span>FinTech</span><span>Government</span></div>
+                    <div class="project-links"><a href="http://159.13.21.93/" target="_blank">&#128279; Live Chatbot</a></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-ai">COMPUTER VISION</span>
+                    <h3>AI CCTV Surveillance System (London Startup)</h3>
+                    <p>Desktop &amp; web surveillance platform using object detection and pose estimation, optimized for CPU inference with OpenVINO for a London-based startup.</p>
+                    <div class="project-tech"><span>YOLOv8</span><span>OpenVINO</span><span>Pose Estimation</span><span>OpenCV</span><span>Flask</span></div>
+                    <div class="project-links"><a href="https://drive.google.com/file/d/1Fvg-z68nm5hVdaPi7i7DwBbxgGhIiyme/view" target="_blank">&#127909; Demo Video</a></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-ai">FULL-STACK AI</span>
+                    <h3>Falcon AI SmartWay System (Saudi Arabia)</h3>
+                    <p>Complete smart hotel management — web platform + two mobile apps automating entire operations from booking to in-room service with AI chatbots.</p>
+                    <div class="project-tech"><span>Full-Stack</span><span>Mobile Apps</span><span>AI Chatbot</span><span>Automation</span></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-ai">AI — FASHION</span>
+                    <h3>Virtual Trial — Fashion Brand AI</h3>
+                    <p>AI-powered virtual try-on system for fashion brands, enabling customers to visualize clothing using computer vision and generative models.</p>
+                    <div class="project-tech"><span>Computer Vision</span><span>Generative AI</span><span>Fashion Tech</span></div>
+                    <div class="project-links"><a href="http://62.171.138.157/" target="_blank">&#128279; Live Demo</a></div>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-card-body">
+                    <span class="project-badge badge-live">COMPUTER VISION — INDUSTRIAL</span>
+                    <h3>Matzoh Bakery — Real-Time Throughput Tracking</h3>
+                    <p>Real-time production throughput tracking system for a matzoh bakery. YOLOv11 object detection with ByteTrack persistence tracks dough balls through class transition to matzah sheets, assigning per-worker stats via calibrated anchor zones on live CCTV feeds.</p>
+                    <div class="project-tech"><span>YOLOv11</span><span>ByteTrack</span><span>Roboflow</span><span>OpenCV</span><span>Supervision</span><span>RTSP</span><span>Python</span></div>
+                    <div class="project-links"><a href="https://drive.google.com/file/d/1dFf4k6Q4Xx96guiuM5ciRVeiFJDhfM1g/view" target="_blank">&#127909; Demo Video</a></div>
+                </div>
+            </div>
+        </div>
 
-			<section class="colorlib-work" data-section="work">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">My Work</span>
-							<h2 class="colorlib-heading animate-box">Recent Work</h2>
-						</div>
-					</div>
-					<div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
-						<div class="col-md-12">
-							<p class="work-menu"><span><a href="#" class="active">Software</a></span> <span><a  class="active"  href="#">Research</a></span> <span><a href="#">Software</a></span> <span><a href="#">Apps</a></span></p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(assets/esheba.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">eSheba</a></h3>
-										<span>Home Loan Software</span>
-										<p class="icon">
-											<span><a href="https://esheba.bhbfc.gov.bd/"><i class="icon-share3"></i></a></span>
-											<span><a href="https://esheba.bhbfc.gov.bd/"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="https://esheba.bhbfc.gov.bd/"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(assets/mobile_app.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">BHBFC Mobile App</a></h3>
-										<span>Animation</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInTop">
-							<div class="project" style="background-image: url(assets/reveal.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Reveal</a></h3>
-										<span>Illustration</span>
-										<p class="icon">
-											<span><a href="https://www.vml.com/reveal"><i class="icon-share3"></i></a></span>
-											<span><a href="https://www.vml.com/reveal"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="https://www.vml.com/reveal"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInBottom">
-							<div class="project" style="background-image: url(assets/peek_ai.jpg);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">AI CCtv Surveillance</a></h3>
-										<span>Application</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="project" style="background-image: url(assets/railcrossing.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Rail Crossing Surveillance</a></h3>
-										<span>Graphic, Logo</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(assets/erp.png);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">ERP</a></h3>
-										<span>Web Design</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="project" style="background-image: url(assets/yoga.JPG);">
-								<div class="desc">
-									<div class="con">
-										<h3><a href="work.html">Yog Pose Analysis</a></h3>
-										<span>Web Design</span>
-										<p class="icon">
-											<span><a href="#"><i class="icon-share3"></i></a></span>
-											<span><a href="#"><i class="icon-eye"></i> 100</a></span>
-											<span><a href="#"><i class="icon-heart"></i> 49</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 animate-box">
-							<p><a href="#" class="btn btn-primary btn-lg btn-load-more">Load more <i class="icon-reload"></i></a></p>
-						</div>
-					</div>
-				</div>
-			</section>
+        <div class="chatbot-banner reveal">
+            <h3>&#x1F7E2; Live Chatbots in Production</h3>
+            <div class="chatbot-list">
+                <div class="chatbot-item">
+                    <div class="chatbot-dot"></div>
+                    <div class="chatbot-info">
+                        <strong>Govt Financial Organization</strong>
+                        <span>RAG-based customer support</span><br>
+                        <a href="http://159.13.21.93/" target="_blank">Visit &#8594;</a>
+                    </div>
+                </div>
+                <div class="chatbot-item">
+                    <div class="chatbot-dot"></div>
+                    <div class="chatbot-info">
+                        <strong>Saudi Hotel Booking System</strong>
+                        <span>Conversational room booking</span><br>
+                        <a href="http://89.117.59.22/" target="_blank">Visit &#8594;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-			<section class="colorlib-blog" data-section="freelance_work">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Freelancing</span>
-							<h2 class="colorlib-heading">Recent Freelancing Projects</h2>
-							<p class="text-center">I am actively working with <strong>Different clients </strong> as AI Engineer for developing their products</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="assets/project1.jpg" class="img-responsive" alt=""></a>
-								<div class="desc">
-									<span><small>Completed</small> | <small> JUGGLE MVP </small></span>
-									<h3><a href="#">JUGGLE MVP</a></h3>
-									<p>Developed an intelligent advertising system that dynamically customizes digital banner content based on the real-time age and gender detection of passersby. The system utilizes a camera feed connected to a deep learning model trained for age and gender classification. Upon detecting a person in front of the display, the model processes facial features to determine demographic attributes, and accordingly updates the advertisement content in real time to match the target profile — enhancing engagement and relevance.</p>
-									<ul>
-										<li>Implemented object detection using YOLOv8.</li>
-										<li>Developed Live dashboard using React,Typescript,Flask Backend</li>
-										<li>Optimized inference for real-time performance using OpenVINO.</li>
-										<li>Adjust the algorithm for remove false positive.</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="assets/project2.jpg" class="img-responsive" ></a>
-								<div class="desc">
-									<span><small>Completed</small> | <small> Machine Learning </small></span>
-									<h3><a href="#">Personal Assistant</a></h3>
-									<p>Built a smart personal assistant that listens to phone call conversations, automatically identifies meeting intents, and seamlessly schedules events in Google Calendar. The assistant also transcribes and summarizes meeting-related discussions to generate concise meeting notes..</p>
-									<ul>
-										<li>Used Whisper api</li>
-										<li>Used NLP technique</li>				
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="assets/project2.jpg" class="img-responsive" ></a>
-								<div class="desc">
-									<span><small>Completed</small> | <small> Machine Learning </small></span>
-									<h3><a href="#">Data annotator</a></h3>
-									<p>Built a scalable tool to automatically annotate 25,000 data samples using a custom pipeline integrated with deep learning models. The pipeline significantly reduced manual labeling effort and improved annotation consistency across large datasets..</p>
-									<ul>
-										<li>Used Object detection</li>
-										<li>Used Pose Estimation</li>				
-									</ul>
-								</div>
-							</div>
-						</div>
+<hr class="divider">
 
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="" class="img-responsive" ></a>
-								<div class="desc">
-									<span><small>Completed</small> | <small> Adult Child detection and classification </small></span>
-									<h3><a href="#">Adult Child</a></h3>
-									<p>Developed model by collecting data from different source and trained object detection and classification model.</p>
-									<ul>
-										<li>Used Object detection</li>
-										<li>Used Utlratlytics,Roboflow</li>				
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="" class="img-responsive" ></a>
-								<div class="desc">
-									<span><small>Ongoing</small> | <small> Business Marketing Automation </small></span>
-									<h3><a href="#">Business Automation AI Agent </a></h3>
-									<p>Developing the backend infrastructure and intelligent agents to automate customer communication channels—phone calls, SMS, and emails—driven by Large Language Model (LLM) responses tailored to business-specific content. The system enables dynamic, context-aware interactions for customer engagement, support, and notifications.</p>
-									<ul>
-										<li>Google VOICE</li>
-										<li>LLM,OpenAI</li>				
-									</ul>
-								</div>
-							</div>
-						</div>
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Tech Stack</p>
+            <h2 class="section-title">Skills &amp; Technologies</h2>
+        </div>
+        <div class="skills-categories reveal">
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <div class="skill-tags"><span>Python</span><span>Java</span><span>C++</span><span>JavaScript</span><span>Dart</span><span>TypeScript</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>AI / ML / DL</h3>
+                <div class="skill-tags"><span>PyTorch</span><span>TensorFlow</span><span>LLMs</span><span>RAG</span><span>LangChain</span><span>VLMs</span><span>Multi-Agent Systems</span><span>Prompt Engineering</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Computer Vision</h3>
+                <div class="skill-tags"><span>YOLOv8</span><span>OpenCV</span><span>OpenVINO</span><span>Pose Estimation</span><span>Emotion Detection</span><span>Object Detection</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Backend &amp; Frameworks</h3>
+                <div class="skill-tags"><span>Django</span><span>Flask</span><span>FastAPI</span><span>Spring Boot</span><span>Node.js</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Cloud &amp; DevOps</h3>
+                <div class="skill-tags"><span>AWS</span><span>GCP</span><span>Terraform</span><span>Docker</span><span>CI/CD</span><span>Cloud Functions</span><span>Cloud Run</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Mobile &amp; Frontend</h3>
+                <div class="skill-tags"><span>Flutter</span><span>React</span><span>Streamlit</span><span>HTML/CSS</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<hr class="divider">
 
-					</div>
-				</div>
-			</section>
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Career</p>
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div class="timeline reveal">
+            <div class="timeline-item">
+                <h3>Assistant Programmer (Senior Officer)</h3>
+                <div class="time">Bangladesh House Building Finance Corp (BHBFC) — 2024 – Present</div>
+                <p>Developing home loan software "eSheba" and mobile applications for this government financial organization. Building FinTech modules with Java JEE, Spring Boot, Oracle Cloud, and Flutter.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Lead Developer</h3>
+                <div class="time">Peek AI Ltd (London) — Feb 2024 – Aug 2024</div>
+                <p>Led development of AI CCTV surveillance using object detection and pose estimation. Built desktop and web apps with optimized CPU inference via OpenVINO and YOLOv8.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>System Developer</h3>
+                <div class="time">Wunderman Thompson (now VML), Dhaka — Sept 2022 – Feb 2024</div>
+                <p>Developed VML's MVP AI product "Reveal" — emotion-aware campaign analytics. Built ETL pipelines, dashboards, and backend services on GCP. Worked on micro-expression deep learning models.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Senior Software Engineer</h3>
+                <div class="time">BJIT Limited — Sept 2021 – May 2022</div>
+                <p>Developed a comprehensive ERP system for a Japan-based software company.</p>
+                <span class="badge-award">&#11088; Top Performer (FY 2021-22)</span>
+            </div>
+            <div class="timeline-item">
+                <h3>Software Engineer (AI)</h3>
+                <div class="time">BJIT Limited — Jan 2019 – Aug 2021</div>
+                <p>Built AI applications for Japan Railway — train detection, human activity recognition, rail-crossing surveillance. Developed pose estimation and Bengali OCR using deep learning.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-			<section class="colorlib-blog" data-section="contest_programming">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Competitive Programming</span>
-							<h2 class="colorlib-heading">Programming Contests & Problem Solving</h2>
-							<p class="text-center">I actively participated in <strong>various online coding platforms</strong> to enhance my problem-solving skills.</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="assets/codechef.png" class="img-responsive" alt="CodeChef"></a>
-								<div class="desc">
-									<span><small>Ongoing</small> | <small>CodeChef</small></span>
-									<h3><a href="#">CodeChef Contests</a></h3>
-									<p>Regular participant in CodeChef contests, solving challenging problems in data structures and algorithms.</p>
-									<ul>
-										<li>Profile: <strong><a href="https://www.codechef.com/users/forhadsidhu">Link</a></strong></li>
-										<li>Highest Rating : 1767</li>
-							            <li>Loved to solved heackathon long contest problem</li>
-										<li>Expert in DP, Graphs, and Bit Manipulation</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="assets/codeforces.jpg" class="img-responsive" alt="CodeForces"></a>
-								<div class="desc">
-									<span><small>Ongoing</small> | <small>CodeForces</small></span>
-									<h3><a href="#">CodeForces Rounds</a></h3>
-									<p>Competing in CodeForces contests with a focus on speed and accuracy in problem-solving.</p>
-									<ul>
-										<li><strong><a href="http://codeforces.com/profile/forhadsidhu">Link</a></strong></li>
-										<li>Strong in Greedy Algorithms and Segment Trees</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="assets/hackerearth.png" class="img-responsive" alt="HackerEarth"></a>
-								<div class="desc">
-									<span><small>Ongoing</small> | <small>HackerEarth</small></span>
-									<h3><a href="#">HackerEarth Challenges</a></h3>
-									<p>Solving problems and participating in hackathons on HackerEarth.</p>
-									<ul>
-										<li>Profile: <strong><a href="https://www.hackerearth.com/@sharif2">Link</a></strong></li>
-										<li>Participated in multiple hiring challenges</li>
-										<li>Specialized in Graph Algorithms and Game Theory</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img"><img src="assets/spoj.jpeg" class="img-responsive" alt="SPOJ"></a>
-								<div class="desc">
-									<span><small>Ongoing</small> | <small>SPOJ</small></span>
-									<h3><a href="#">SPOJ Problem Solving</a></h3>
-									<p>Practicing advanced problem-solving techniques and optimization strategies on SPOJ.</p>
-									<ul>
-										<li>Over 300+ problems solved</li>
-										<li>Profile: <strong><a href="https://www.spoj.com/users/forhad__sidhu/">Link</a></strong></li>
-										<li>Mastered Number Theory and Advanced Data Structures</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+<hr class="divider">
 
-			<section class="colorlib-blog" data-section="research">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Research</span>
-							<h2 class="colorlib-heading">Research Experience</h2>
-							<p class="text-center">Collaborating with a team of researchers on developing a multimodal system for detecting behaviors associated with Autism Spectrum Disorder (ASD).</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								<a href="#" class="blog-img">
-									<img src="assets/asd_image.jpg" class="img-responsive" alt="ASD Research">
-								</a>
-								<div class="desc">
-									<span><small>Ongoing</small> | <small>Multi-Modal Learning</small></span>
-									<h3><a href="#">ASD Detection Using Multi-Modal Data</a></h3>
-									<p>Conducting research using pose, emotion, audio, and video analysis for Autism Spectrum Disorder detection.</p>
-									<ul>
-										<li>Emotion detection with <strong>ResNet50</strong></li>
-										<li>Pose-based video classification</li>
-										<li>Voice pattern analysis</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-			
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								<a href="#" class="blog-img">
-									<img src="assets/activity_recognition.jpg" class="img-responsive" alt="Human Activity Recognition">
-								</a>
-								<div class="desc">
-									<span><small>Ongoing</small> | <small>Computer Vision</small></span>
-									<h3><a href="#">Human Activity Recognition</a></h3>
-									<p>Developing models to understand human activities in dynamic environments using vision-based techniques.</p>
-									<ul>
-										<li>Pose estimation & action recognition</li>
-										<li>Real-time behavioral analysis</li>
-										<li>Environment-specific model training</li>
-									</ul>
-								</div>
-							</div>
-						</div>
+<!-- FREELANCE -->
+<section id="freelance">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Freelancing</p>
+            <h2 class="section-title">Freelance &amp; Side Projects</h2>
+            <p class="section-desc">Actively collaborating with international clients as an AI engineer, building custom AI solutions and automation tools.</p>
+        </div>
+        <div class="freelance-grid reveal">
+            <div class="freelance-card">
+                <span class="project-badge badge-ai">COMPUTER VISION</span>
+                <h3>JUGGLE MVP — Smart Ad Display</h3>
+                <p>Intelligent advertising that customizes digital banners based on real-time age and gender detection using YOLOv8 and OpenVINO.</p>
+                <div class="project-tech"><span>YOLOv8</span><span>OpenVINO</span><span>React</span><span>Flask</span></div>
+            </div>
+            <div class="freelance-card">
+                <span class="project-badge badge-ai">NLP / AI</span>
+                <h3>Personal Assistant — Call Scheduler</h3>
+                <p>Smart assistant that listens to phone calls, identifies meeting intents, and auto-schedules events in Google Calendar with transcription.</p>
+                <div class="project-tech"><span>Whisper</span><span>NLP</span><span>Google Calendar API</span></div>
+            </div>
+            <div class="freelance-card">
+                <span class="project-badge badge-ai">AUTOMATION</span>
+                <h3>Data Annotator — 25K Auto-Labels</h3>
+                <p>Scalable auto-annotation tool using object detection and pose estimation to label 25,000+ data samples automatically.</p>
+                <div class="project-tech"><span>Object Detection</span><span>Pose Estimation</span><span>Pipeline</span></div>
+            </div>
+            <div class="freelance-card">
+                <span class="project-badge badge-ai">LLM AGENTS</span>
+                <h3>Business Automation AI Agent</h3>
+                <p>Intelligent agents automating customer phone calls, SMS, and emails driven by LLM responses tailored to business content.</p>
+                <div class="project-tech"><span>Google Voice</span><span>LLM</span><span>OpenAI</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<hr class="divider">
 
-						<div class="col-md-12 col-sm-12 animate-box" data-animate-effect="fadeInLeft">
-						<div class="blog-entry">
-							<a href="https://ecai2025.org/" class="blog-img">
-							<img src="assets/ecai_logo.png" class="img-responsive" alt="ECAI Conference Logo">
-							</a>
-							<div class="desc">
-							<span><small><strong>2025</strong></small> | <small><strong>Conference Review</strong></small></span>
-							<h3><a href="https://ecai2025.org/" target="_blank"><strong>Subreviewer – ECAI 2025</strong></a></h3>
-							<p><strong>Served as a subreviewer</strong> for the European Conference on Artificial Intelligence (ECAI 2025), contributing to the peer review process under the guidance of a primary reviewer.</p>
-							<ul>
-								<li>Reviewed papers in AI and machine learning</li>
-								<li>Assisted in providing structured feedback</li>
-								<li>Collaborated with primary reviewer on evaluation</li>
-							</ul>
-							</div>
-						</div>
-						</div>
+<!-- EDUCATION -->
+<section id="education">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Education</p>
+            <h2 class="section-title">Academic Background</h2>
+        </div>
+        <div class="edu-card reveal">
+            <h3>B.Sc. in Computer Science &amp; Engineering</h3>
+            <p>Chittagong University of Engineering &amp; Technology (CUET) — one of the premier government engineering universities in Bangladesh.</p>
+        </div>
+    </div>
+</section>
 
+<hr class="divider">
 
+<!-- RESEARCH -->
+<section id="research">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Research</p>
+            <h2 class="section-title">Research &amp; Publications</h2>
+            <p class="section-desc">Focused on multimodal Autism Spectrum Disorder (ASD) detection using pose, emotion, audio, and video analysis.</p>
+        </div>
+        <div class="research-grid reveal">
+            <div class="research-card">
+                <span class="tag tag-review">Under Review</span>
+                <h3>Facial Expression Recognition as a Step Towards Multimodal Behavior Analysis of Children with ASD</h3>
+                <p>Focusing on facial expression recognition for children with ASD to improve multimodal behavior analysis.</p>
+            </div>
+            <div class="research-card">
+                <span class="tag tag-prep">Manuscript in Preparation</span>
+                <h3>RAG-based ASD Detection Using Pose and Emotion Data</h3>
+                <p>Using RAG-based models for detecting Autism Spectrum Disorder through pose estimation and emotion data analysis.</p>
+            </div>
+            <div class="research-card">
+                <span class="tag tag-sub">Subreviewer</span>
+                <h3>ECAI 2025 — European Conference on AI</h3>
+                <p>Served as subreviewer for ECAI 2025, reviewing papers in AI and machine learning.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
+<hr class="divider">
 
+<!-- COMPETITIVE PROGRAMMING -->
+<section id="cp">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Problem Solving</p>
+            <h2 class="section-title">Competitive Programming</h2>
+        </div>
+        <div class="cp-grid reveal">
+            <div class="cp-card">
+                <h4>CodeChef</h4>
+                <p>Highest Rating: 1767</p>
+                <a href="https://www.codechef.com/users/forhadsidhu" target="_blank">View Profile &#8594;</a>
+            </div>
+            <div class="cp-card">
+                <h4>CodeForces</h4>
+                <p>Greedy, Segment Trees</p>
+                <a href="http://codeforces.com/profile/forhadsidhu" target="_blank">View Profile &#8594;</a>
+            </div>
+            <div class="cp-card">
+                <h4>HackerEarth</h4>
+                <p>Hackathons &amp; Challenges</p>
+                <a href="https://www.hackerearth.com/@sharif2" target="_blank">View Profile &#8594;</a>
+            </div>
+            <div class="cp-card">
+                <h4>SPOJ</h4>
+                <p>300+ Problems Solved</p>
+                <a href="https://www.spoj.com/users/forhad__sidhu/" target="_blank">View Profile &#8594;</a>
+            </div>
+        </div>
+    </div>
+</section>
 
-					</div>
-				</div>
-			</section>
+<hr class="divider">
 
-			<section class="colorlib-blog" data-section="research_publication">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Publications</span>
-							<h2 class="colorlib-heading">Research Publications</h2>
-							<p class="text-center">Here are my recent research publications related to Autism Spectrum Disorder detection.</p>
-						</div>
-					</div>
-					<div class="row">
-						<!-- Under Review Publication -->
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-							<div class="blog-entry">
-								
-								<div class="desc">
-									<span><small>Under Review</small> | <small>Facial Expression Recognition</small></span>
-									<h3><a href="#">Facial Expression Recognition as a Step Towards Multimodal Behavior Analysis of Children with Autism Spectrum Disorder</a></h3>
-									<p>This paper is currently under review, focusing on facial expression recognition for children with Autism Spectrum Disorder (ASD) to improve multimodal behavior analysis.</p>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Preparing Manuscript -->
-						<div class="col-md-6 col-sm-6 animate-box" data-animate-effect="fadeInRight">
-							<div class="blog-entry">
-								
-								<div class="desc">
-									<span><small>Manuscript in Preparation</small> | <small>RAG-based ASD Detection</small></span>
-									<h3><a href="#">RAG-based ASD Detection Using Pose and Emotion Data</a></h3>
-									<p>This manuscript is currently being prepared, focusing on the use of RAG-based models for detecting Autism Spectrum Disorder (ASD) using pose and emotion data.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-label">Get in Touch</p>
+            <h2 class="section-title">Let's Build Something Great</h2>
+        </div>
+        <div class="contact-grid reveal">
+            <div class="contact-info">
+                <p>I'm always open to discussing AI projects, freelance opportunities, research collaborations, or just a good tech conversation.</p>
+                <div class="contact-links">
+                    <a href="#">&#128205; Dhaka, Bangladesh</a>
+                    <a href="https://github.com/forhadsidhu" target="_blank">&#128279; GitHub</a>
+                    <a href="https://www.linkedin.com/in/sharif-ullah/" target="_blank">&#128279; LinkedIn</a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <input type="text" placeholder="Subject">
+                <textarea placeholder="Your Message"></textarea>
+                <button class="btn btn-primary" style="align-self: flex-start;">Send Message &#8594;</button>
+            </div>
+        </div>
+    </div>
+</section>
 
-			
-			
-			
-			
-			
-			
+<footer>
+    <p>&copy; 2026 Sharif Ullah. Crafted with passion.</p>
+</footer>
 
-			<section class="colorlib-contact" data-section="contact">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 animate-box" data-animate-effect="fadeInLeft">
-							<span class="heading-meta">Get in Touch</span>
-							<h2 class="colorlib-heading">Contact</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-globe-outline"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="#"></a></p>
-								</div>
-							</div>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-map"></i>
-								</div>
-								<div class="colorlib-text">
-									<p>Dhaka Bangladesh</p>
-								</div>
-							</div>
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => observer.observe(el));
+</script>
 
-							<div class="colorlib-feature colorlib-feature-sm animate-box" data-animate-effect="fadeInLeft">
-								<div class="colorlib-icon">
-									<i class="icon-phone"></i>
-								</div>
-								<div class="colorlib-text">
-									<p><a href="tel://"></a></p>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-7 col-md-push-1">
-							<div class="row">
-								<div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInRight">
-									<form action="">
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Email">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Subject">
-										</div>
-										<div class="form-group">
-											<textarea name="" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-										</div>
-										<div class="form-group">
-											<input type="submit" class="btn btn-primary btn-send-message" value="Send Message">
-										</div>
-									</form>
-								</div>
-								
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
-
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-
-	</body>
+</body>
 </html>
-
