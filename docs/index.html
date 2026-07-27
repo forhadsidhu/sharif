@@ -4,806 +4,997 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sharif Ullah — AI Engineer & Researcher</title>
-    <meta name="description" content="Portfolio of Sharif Ullah — AI Engineer, Full-Stack Developer, and Researcher specializing in LLMs, Computer Vision, and Multi-Agent Systems.">
+    <meta name="description" content="Sharif Ullah is an AI Engineer and Researcher building agentic LLM systems, computer vision, and multi-agent AI in production.">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Sharif Ullah — AI Engineer & Researcher">
-    <meta property="og:description" content="6+ years building production AI systems — Object Detection, LLM Chatbots, Computer Vision, Multi-Agent Systems. 15+ projects delivered across 4 countries.">
+    <meta property="og:description" content="AI Engineer & Researcher. 6+ years, 15+ AI products across 4 countries. LLMs, RAG, Multi-Agent, Computer Vision.">
     <meta property="og:image" content="assets/sharif_profile.jpg">
-    <meta property="og:url" content="">
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Sharif Ullah — AI Engineer & Researcher">
-    <meta name="twitter:description" content="6+ years building production AI systems — Object Detection, LLM Chatbots, Computer Vision, Multi-Agent Systems.">
-    <meta name="twitter:image" content="assets/sharif_profile.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg: #0a0a0b;
-            --bg-card: #111113;
-            --bg-card-hover: #19191c;
-            --surface: #1a1a1f;
-            --border: rgba(255,255,255,0.06);
-            --text: #e8e8ec;
-            --text-muted: #8a8a9a;
-            --accent: #6c63ff;
-            --accent-glow: rgba(108,99,255,0.15);
-            --accent2: #00d4aa;
-            --accent3: #ff6b6b;
-            --gradient: linear-gradient(135deg, #6c63ff, #00d4aa);
+            --bg: #ffffff;
+            --text: #1a2332;
+            --text-body: #2d3748;
+            --text-muted: #6b7280;
+            --link: #3b82f6;
+            --link-hover: #1d4ed8;
+            --border: #e5e7eb;
+            --border-strong: #d1d5db;
+            --nav-active-bg: #eaf1f8;
+            --nav-active-text: #1e3a5f;
+            --callout-bg: #f7f9fb;
+            --callout-border: #3b82f6;
+            --news-date: #64748b;
+            --tag-bg: #eef2ff;
+            --tag-text: #3730a3;
+            --tag-accepted-bg: #dcfce7;
+            --tag-accepted-text: #166534;
+            --tag-review-bg: #fef3c7;
+            --tag-review-text: #92400e;
+            --tag-prep-bg: #e0f2fe;
+            --tag-prep-text: #075985;
+            --font-serif: 'Merriweather', 'Times New Roman', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: var(--font-sans);
             background: var(--bg);
-            color: var(--text);
+            color: var(--text-body);
             line-height: 1.7;
-            overflow-x: hidden;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
         }
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+        a { color: var(--link); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--link-hover); text-decoration: underline; }
 
-        /* NAV */
+        ::selection { background: var(--nav-active-bg); color: var(--nav-active-text); }
+
+        /* ============ NAV ============ */
         .nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-            background: rgba(10,10,11,0.8);
-            backdrop-filter: blur(20px);
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
-        .tag-accepted {
-            background: #28a745;
-            color: #fff;
+        .nav-inner {
+            max-width: 1080px; margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
         }
-        .nav-logo {
-            font-weight: 800; font-size: 1.3rem;
-            background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-clip: text; text-decoration: none;
+        .nav-brand {
+            font-family: var(--font-serif); font-weight: 900;
+            font-size: 1.25rem; color: var(--text); text-decoration: none;
         }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-brand:hover { color: var(--text); text-decoration: none; }
+        .nav-links { display: flex; gap: 0.25rem; list-style: none; align-items: center; }
         .nav-links a {
-            color: var(--text-muted); text-decoration: none; font-size: 0.85rem;
-            font-weight: 500; letter-spacing: 0.02em; transition: color 0.3s;
+            color: var(--text-body); font-size: 0.94rem; font-weight: 500;
+            padding: 0.5rem 0.95rem; border-radius: 8px;
+            transition: background 0.2s, color 0.2s;
         }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a:hover { background: #f3f4f6; color: var(--text); text-decoration: none; }
+        .nav-links a.active { background: var(--nav-active-bg); color: var(--nav-active-text); font-weight: 600; }
+
         .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
-        .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
 
         @media (max-width: 768px) {
+            .nav-inner { padding: 0.9rem 1.25rem; }
             .nav-links {
-                position: fixed; top: 0; right: -100%; width: 70%; height: 100vh;
-                background: var(--bg-card); flex-direction: column;
-                padding: 5rem 2rem; gap: 1.5rem; transition: right 0.3s;
-                border-left: 1px solid var(--border);
+                position: fixed; top: 60px; right: -100%; width: 75%; height: calc(100vh - 60px);
+                background: #fff; flex-direction: column; align-items: flex-start;
+                padding: 1.5rem; gap: 0.4rem; transition: right 0.3s;
+                border-left: 1px solid var(--border); box-shadow: -10px 0 30px rgba(0,0,0,0.05);
             }
             .nav-links.active { right: 0; }
-            .nav-links a { font-size: 1.1rem; }
-            .hamburger { display: block; z-index: 1001; }
+            .nav-links a { width: 100%; padding: 0.75rem 1rem; }
+            .hamburger { display: block; }
         }
 
-        /* HERO */
-        .hero {
-            min-height: 100vh; display: flex; align-items: center;
-            padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content: ''; position: absolute; top: -50%; right: -20%;
-            width: 800px; height: 800px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            animation: pulse 8s ease-in-out infinite alternate;
-        }
-        @keyframes pulse { 0% { opacity: 0.3; transform: scale(1); } 100% { opacity: 0.6; transform: scale(1.2); } }
-        .hero-inner {
-            max-width: 1200px; margin: 0 auto; width: 100%;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-            position: relative; z-index: 1;
-        }
-        .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 0.5rem;
-        }
-        .hero-text h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero-subtitle { font-size: 1.15rem; color: var(--text-muted); margin: 1rem 0 1.5rem; max-width: 500px; }
-        .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
-        .hero-tags span {
-            padding: 0.35rem 0.9rem; border-radius: 100px; font-size: 0.75rem; font-weight: 600;
-            letter-spacing: 0.04em; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface);
-        }
-        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .btn {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            padding: 0.75rem 1.8rem; border-radius: 100px; font-weight: 600;
-            font-size: 0.9rem; text-decoration: none; transition: all 0.3s; cursor: pointer; border: none;
-        }
-        .btn-primary { background: var(--gradient); color: #fff; box-shadow: 0 4px 20px var(--accent-glow); }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); }
-        .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
-        .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-        .hero-image { display: flex; justify-content: center; }
-        .hero-image-wrapper {
-            width: 380px; height: 460px; border-radius: 24px; overflow: hidden;
-            border: 2px solid var(--border); position: relative;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-        }
-        .hero-image-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-        .hero-image-wrapper::after {
-            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
-            background: linear-gradient(to top, rgba(10,10,11,0.6), transparent);
-        }
-        @media (max-width: 768px) {
-            .hero-inner { grid-template-columns: 1fr; text-align: center; }
-            .hero-tags { justify-content: center; }
-            .hero-btns { justify-content: center; }
-            .hero-subtitle { margin-left: auto; margin-right: auto; }
-            .hero-image-wrapper { width: 260px; height: 320px; }
-            .hero-image { order: -1; }
+        /* ============ LAYOUT ============ */
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+        @media (max-width: 768px) { .container { padding: 0 1.25rem; } }
+
+        section { padding: 3rem 0; }
+        section:first-of-type { padding-top: 3.5rem; }
+
+        /* Section headings with underline (like reference) */
+        .section-heading {
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 1.75rem; color: var(--text);
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.75rem;
         }
 
-        /* SECTIONS */
-        section { padding: 6rem 2rem; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-label {
-            font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.5rem;
+        /* ============ HERO ============ */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 3rem;
+            align-items: start;
         }
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem); margin-bottom: 1rem;
+        .hero-photo {
+            width: 240px; height: 240px; border-radius: 50%;
+            overflow: hidden; border: 1px solid var(--border);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
         }
-        .section-desc { color: var(--text-muted); max-width: 600px; margin-bottom: 3rem; }
+        .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-        /* ABOUT */
-        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-        .about-text p { color: var(--text-muted); margin-bottom: 1.2rem; }
-        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .stat-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; padding: 1.5rem; text-align: center; transition: border-color 0.3s;
+        .hero-name {
+            font-family: var(--font-serif); font-weight: 900;
+            font-size: 2.5rem; color: var(--text); line-height: 1.15;
+            margin-bottom: 0.4rem;
         }
-        .stat-card:hover { border-color: var(--accent); }
-        .stat-num { font-size: 2.2rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .stat-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem; }
-        @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
+        .hero-title {
+            color: var(--text-body); font-size: 1.05rem; margin-bottom: 0.15rem;
+        }
+        .hero-affiliation {
+            color: var(--text-body); font-size: 1.05rem; margin-bottom: 1.25rem;
+        }
+        .hero-bio { color: var(--text-body); font-size: 1rem; margin-bottom: 1rem; }
+        .hero-bio:last-of-type { margin-bottom: 1.25rem; }
 
-        /* PROJECT CARDS */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 1.5rem; }
-        .project-card {
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-            overflow: hidden; transition: all 0.4s; position: relative;
+        .hero-contact {
+            display: flex; gap: 1.5rem; flex-wrap: wrap;
+            font-size: 0.94rem; color: var(--text-body); margin-bottom: 1rem;
         }
-        .project-card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-        .project-card-body { padding: 1.5rem; }
-        .project-badge {
-            display: inline-block; padding: 0.25rem 0.7rem; border-radius: 100px;
-            font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; margin-bottom: 0.8rem;
-        }
-        .badge-live { background: rgba(0,212,170,0.15); color: var(--accent2); }
-        .badge-ai { background: var(--accent-glow); color: var(--accent); }
-        .badge-saas { background: rgba(255,107,107,0.15); color: var(--accent3); }
-        .project-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
-        .project-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem; }
-        .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-        .project-tech span { padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.7rem; font-weight: 600; background: var(--surface); color: var(--text-muted); }
-        .project-links { display: flex; gap: 0.8rem; }
-        .project-links a { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 0.3rem; transition: 0.3s; }
-        .project-links a:hover { color: var(--accent2); }
-        @media (max-width: 480px) { .projects-grid { grid-template-columns: 1fr; } }
+        .hero-contact span { display: inline-flex; align-items: center; gap: 0.45rem; }
+        .hero-contact svg { width: 16px; height: 16px; color: var(--text-muted); flex-shrink: 0; }
 
-        /* CHATBOT BANNER */
-        .chatbot-banner {
-            background: linear-gradient(135deg, rgba(108,99,255,0.08), rgba(0,212,170,0.08));
-            border: 1px solid var(--border); border-radius: 20px; padding: 2.5rem; margin-top: 3rem;
-        }
-        .chatbot-banner h3 { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1.3rem; margin-bottom: 1rem; }
-        .chatbot-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; }
-        .chatbot-item {
-            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
-            padding: 1.2rem; display: flex; align-items: center; gap: 1rem; transition: 0.3s;
-        }
-        .chatbot-item:hover { border-color: var(--accent2); }
-        .chatbot-dot {
-            width: 10px; height: 10px; border-radius: 50%; background: var(--accent2);
-            box-shadow: 0 0 10px var(--accent2); animation: blink 2s ease-in-out infinite; flex-shrink: 0;
-        }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        .chatbot-info { flex: 1; }
-        .chatbot-info strong { font-size: 0.9rem; display: block; }
-        .chatbot-info span { font-size: 0.78rem; color: var(--text-muted); }
-        .chatbot-info a { font-size: 0.78rem; color: var(--accent); text-decoration: none; font-weight: 600; }
-
-        /* SKILLS */
-        .skills-categories { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
-        .skill-group { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
-        .skill-group h3 { font-family: 'Inter', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent); }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-        .skill-tags span {
-            padding: 0.3rem 0.8rem; border-radius: 8px; font-size: 0.78rem; font-weight: 500;
-            background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); transition: 0.3s;
-        }
-        .skill-tags span:hover { border-color: var(--accent); color: var(--text); }
-
-        /* TIMELINE */
-        .timeline { position: relative; padding-left: 2rem; }
-        .timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--border); }
-        .timeline-item { position: relative; margin-bottom: 2.5rem; }
-        .timeline-item::before {
-            content: ''; position: absolute; left: -2rem; top: 8px;
-            width: 14px; height: 14px; border-radius: 50%;
-            background: var(--accent); border: 3px solid var(--bg); z-index: 1;
-        }
-        .timeline-item h3 { font-family: 'Inter', sans-serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.2rem; }
-        .timeline-item .time { font-size: 0.8rem; color: var(--accent); font-weight: 600; margin-bottom: 0.5rem; }
-        .timeline-item p { font-size: 0.88rem; color: var(--text-muted); }
-        .badge-award {
-            display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px;
-            font-size: 0.7rem; font-weight: 700; background: rgba(255,215,0,0.15); color: #ffd700; margin-top: 0.3rem;
-        }
-
-        /* FREELANCE */
-        .freelance-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
-        .freelance-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; padding: 1.5rem; transition: 0.3s;
-        }
-        .freelance-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .freelance-card h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
-        .freelance-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.8rem; }
-
-        /* EDUCATION */
-        .edu-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; padding: 2rem; max-width: 600px;
-        }
-        .edu-card h3 { font-family: 'Inter', sans-serif; font-size: 1.1rem; font-weight: 700; }
-        .edu-card p { font-size: 0.9rem; color: var(--text-muted); }
-
-        /* RESEARCH */
-        .research-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
-        .research-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; padding: 1.5rem; transition: 0.3s;
-        }
-        .research-card:hover { border-color: var(--accent); }
-        .research-card h3 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .research-card p { font-size: 0.85rem; color: var(--text-muted); }
-        .research-card .tag {
-            display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px;
-            font-size: 0.7rem; font-weight: 700; margin-bottom: 0.8rem;
-        }
-        .tag-review { background: rgba(255,165,0,0.15); color: #ffa500; }
-        .tag-prep { background: rgba(0,212,170,0.15); color: var(--accent2); }
-        .tag-sub { background: var(--accent-glow); color: var(--accent); }
-
-        /* CP */
-        .cp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
-        .cp-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 12px; padding: 1.3rem; text-align: center; transition: 0.3s;
-        }
-        .cp-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-        .cp-card h4 { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
-        .cp-card p { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem; }
-        .cp-card a { font-size: 0.8rem; color: var(--accent); text-decoration: none; font-weight: 600; }
-
-        /* CONTACT */
-        .contact-section { background: linear-gradient(180deg, var(--bg), #0f0f14); }
-        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-        .contact-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
-        .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
-        .contact-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.6rem; transition: 0.3s; }
-        .contact-links a:hover { color: var(--accent); }
-        .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-        .contact-form input, .contact-form textarea {
-            background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-            padding: 0.9rem 1.2rem; color: var(--text); font-family: 'Inter', sans-serif;
-            font-size: 0.9rem; outline: none; transition: 0.3s;
-        }
-        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--accent); }
-        .contact-form textarea { resize: vertical; min-height: 120px; }
-        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
-
-        footer {
-            text-align: center; padding: 2rem;
-            border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--text-muted);
-        }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-        .divider { height: 1px; background: var(--border); margin: 0; border: none; }
-
-        /* SOCIAL LINKS */
-        .social-row { display: flex; gap: 0.6rem; margin-top: 0.6rem; margin-bottom: 0.3rem; flex-wrap: wrap; }
+        .social-row { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.25rem; }
         .social-row a {
             display: inline-flex; align-items: center; justify-content: center;
-            width: 38px; height: 38px; border-radius: 10px;
-            background: var(--surface); border: 1px solid var(--border);
-            color: var(--text-muted); text-decoration: none; font-size: 0.95rem;
-            transition: all 0.3s;
+            width: 36px; height: 36px; border-radius: 50%;
+            background: #f3f4f6; color: var(--text-body);
+            transition: all 0.2s;
         }
-        .social-row a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); transform: translateY(-2px); }
-        .social-row svg { width: 18px; height: 18px; fill: currentColor; }
-        @media (max-width: 768px) { .social-row { justify-content: center; } }
+        .social-row a:hover {
+            background: var(--nav-active-bg); color: var(--nav-active-text);
+            text-decoration: none; transform: translateY(-1px);
+        }
+        .social-row svg { width: 16px; height: 16px; }
+
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 1.75rem; text-align: center; }
+            .hero-photo { margin: 0 auto; width: 200px; height: 200px; }
+            .hero-contact { justify-content: center; }
+            .social-row { justify-content: center; }
+            .hero-name { font-size: 2rem; }
+        }
+
+        /* ============ CALLOUT (Openings style) ============ */
+        .callout {
+            background: var(--callout-bg);
+            border-left: 3px solid var(--callout-border);
+            border-radius: 4px;
+            padding: 1.25rem 1.5rem;
+            color: var(--text-body);
+            font-size: 0.98rem;
+        }
+        .callout strong { color: var(--text); font-weight: 700; }
+
+        /* ============ NEWS ============ */
+        .news-list { display: flex; flex-direction: column; }
+        .news-item {
+            display: grid; grid-template-columns: 110px 1fr;
+            gap: 1.25rem; padding: 0.85rem 0;
+            border-bottom: 1px dashed var(--border);
+            font-size: 0.96rem;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-date {
+            color: var(--news-date); font-weight: 600;
+            font-size: 0.88rem; padding-top: 0.1rem;
+            font-variant-numeric: tabular-nums;
+        }
+        .news-body { color: var(--text-body); }
+        .news-body strong { color: var(--text); font-weight: 700; }
+        @media (max-width: 640px) {
+            .news-item { grid-template-columns: 1fr; gap: 0.25rem; }
+        }
+
+        /* ============ PROJECT LIST (Selected Publications style) ============ */
+        .project-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .project-item {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .project-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .project-title {
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 1.1rem; color: var(--text);
+            margin-bottom: 0.4rem; line-height: 1.35;
+        }
+        .project-meta {
+            font-size: 0.9rem; color: var(--text-muted);
+            margin-bottom: 0.55rem; font-style: italic;
+        }
+        .project-meta .venue { color: var(--text); font-style: normal; font-weight: 600; }
+        .project-desc {
+            font-size: 0.95rem; color: var(--text-body);
+            margin-bottom: 0.7rem;
+        }
+        .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
+        .project-tags span {
+            padding: 0.15rem 0.6rem; border-radius: 4px;
+            font-size: 0.75rem; font-weight: 500;
+            background: #f3f4f6; color: var(--text-body);
+            border: 1px solid var(--border);
+        }
+        .project-links { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+        .project-links a {
+            font-size: 0.85rem; font-weight: 500;
+            padding: 0.2rem 0.7rem; border-radius: 4px;
+            background: var(--nav-active-bg); color: var(--nav-active-text);
+        }
+        .project-links a:hover { background: #d5e2ee; text-decoration: none; }
+
+        /* ============ TIMELINE (Experience) ============ */
+        .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+        .timeline-item {
+            display: grid; grid-template-columns: 200px 1fr;
+            gap: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
+        .timeline-date {
+            color: var(--text-muted); font-size: 0.88rem; font-weight: 500;
+            padding-top: 0.2rem;
+        }
+        .timeline-role {
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 1.05rem; color: var(--text);
+            margin-bottom: 0.15rem;
+        }
+        .timeline-company {
+            font-size: 0.95rem; color: var(--text-body);
+            margin-bottom: 0.4rem;
+        }
+        .timeline-desc { font-size: 0.93rem; color: var(--text-body); }
+        .badge-award {
+            display: inline-block; margin-top: 0.5rem;
+            padding: 0.2rem 0.6rem; border-radius: 4px;
+            font-size: 0.78rem; font-weight: 600;
+            background: #fef3c7; color: #92400e;
+        }
+        @media (max-width: 640px) {
+            .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
+        }
+
+        /* ============ SKILLS ============ */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+        }
+        .skill-group h3 {
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 0.98rem; color: var(--text);
+            margin-bottom: 0.6rem;
+        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+        .skill-tags span {
+            padding: 0.2rem 0.6rem; border-radius: 4px;
+            font-size: 0.82rem; color: var(--text-body);
+            background: #f3f4f6; border: 1px solid var(--border);
+        }
+
+        /* ============ RESEARCH ============ */
+        .research-item {
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1.5rem;
+        }
+        .research-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .status-tag {
+            display: inline-block; padding: 0.18rem 0.6rem;
+            border-radius: 4px; font-size: 0.75rem; font-weight: 600;
+            margin-bottom: 0.5rem; letter-spacing: 0.02em;
+        }
+        .tag-accepted { background: var(--tag-accepted-bg); color: var(--tag-accepted-text); }
+        .tag-review { background: var(--tag-review-bg); color: var(--tag-review-text); }
+        .tag-prep { background: var(--tag-prep-bg); color: var(--tag-prep-text); }
+        .tag-sub { background: var(--tag-bg); color: var(--tag-text); }
+
+        /* ============ EDUCATION ============ */
+        .edu-item { margin-bottom: 1.25rem; }
+        .edu-item:last-child { margin-bottom: 0; }
+        .edu-school {
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 1.05rem; color: var(--text);
+            margin-bottom: 0.15rem;
+        }
+        .edu-degree { font-size: 0.95rem; color: var(--text-body); margin-bottom: 0.15rem; }
+        .edu-date { font-size: 0.88rem; color: var(--text-muted); }
+
+        .ielts-scores {
+            display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.75rem;
+        }
+        .ielts-scores > div {
+            background: #f7f9fb; border: 1px solid var(--border);
+            border-radius: 6px; padding: 0.55rem 0.9rem;
+            text-align: center; min-width: 72px;
+        }
+        .ielts-scores .num {
+            font-family: var(--font-serif); font-weight: 700;
+            font-size: 1.2rem; color: var(--nav-active-text);
+        }
+        .ielts-scores .lbl {
+            font-size: 0.68rem; color: var(--text-muted);
+            font-weight: 600; letter-spacing: 0.05em; margin-top: 0.1rem;
+        }
+
+        /* ============ MISC ============ */
+        .misc-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+        .misc-list li {
+            padding-left: 0.25rem;
+            color: var(--text-body); font-size: 0.98rem;
+        }
+
+        /* ============ CONTACT ============ */
+        .contact-card {
+            background: var(--callout-bg);
+            border-left: 3px solid var(--callout-border);
+            border-radius: 4px;
+            padding: 1.5rem;
+        }
+        .contact-card p { margin-bottom: 0.75rem; color: var(--text-body); }
+        .contact-card p:last-child { margin-bottom: 0; }
+
+        /* ============ FOOTER ============ */
+        footer {
+            text-align: center; padding: 2rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem; color: var(--text-muted);
+            margin-top: 2rem;
+        }
+        
+        .skill-group--highlight {
+                background: #fef2f2;
+                border: 1px solid #fecaca;
+                border-left: 3px solid #dc2626;
+                border-radius: 6px;
+                padding: 1rem 1.15rem;
+            }
+            .skill-group--highlight h3 { color: #991b1b; }
+            .skill-hl {
+                color: #dc2626;
+                font-weight: 700;
+                font-size: 0.85rem;
+                letter-spacing: 0.01em;
+            }
+            .skill-group--highlight .skill-tags span {
+                background: #fff;
+                border-color: #fecaca;
+                color: #7f1d1d;
+            }
+
+        /* Reveal animation */
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            html { scroll-behavior: auto; }
+        }
     </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
-    <a href="#" class="nav-logo">SU.</a>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#ai-projects">AI Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#freelance">Freelance</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
+    <div class="nav-inner">
+        <a href="#home" class="nav-brand">Sharif Ullah</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="home">
-    <div class="hero-inner">
-        <div class="hero-text">
-            <h1>Hi, I'm <span>Sharif Ullah</span></h1>
-            <p class="hero-subtitle">AI Engineer &amp; Researcher building intelligent systems — from LLM-powered products and multi-agent architectures to computer vision and real-time analytics.</p>
-            <div class="hero-tags">
-                <span>LLMs &amp; RAG</span>
-                <span>Computer Vision</span>
-                <span>Multi-Agent AI</span>
-                <span>Full-Stack</span>
-                <span>Cloud (GCP / AWS)</span>
-            </div>
-            <div class="hero-btns">
-                <a href="https://drive.google.com/file/d/1ktSxh8OCRgGpXNfTgOxrARZ6equvmEIs/view" class="btn btn-primary" target="_blank">Download CV &#8595;</a>
-                <a href="#ai-projects" class="btn btn-outline">View Projects &#8594;</a>
-            </div>
-        </div>
-        <div class="hero-image">
-            <div class="hero-image-wrapper">
+<section id="home">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-photo">
                 <img src="assets/sharif_profile.jpg" alt="Sharif Ullah">
             </div>
+            <div class="hero-text">
+                <h1 class="hero-name">Sharif Ullah</h1>
+                <div class="hero-title">AI Engineer &amp; Researcher</div>
+                <div class="hero-affiliation">
+                    <a href="https://www.bhbfc.gov.bd/" target="_blank">Bangladesh House Building Finance Corporation</a>, Dhaka
+                </div>
+
+                <p class="hero-bio">
+                    I am an AI engineer and researcher with 7+ years of experience delivering production AI systems across
+                    <strong>Bangladesh, Japan, Saudi Arabia,USA, and the UK</strong>. My work spans
+                    <a href="#projects">LLM-powered chatbots and RAG systems</a>,
+                    computer vision surveillance platforms, emotion detection engines,
+                    multi-agent CRM automations, and full-stack SaaS products. I currently serve as an
+                    Assistant Programmer at Bangladesh House Building Finance Corporation (BHBFC),
+                    developing FinTech modules for the government's home-loan platform.
+                </p>
+
+                <p class="hero-bio">
+                    My research focuses on the intersection of <strong>multimodal deep learning and healthcare</strong>—
+                    combining pose, emotion, and audio analysis for early
+                    <a href="#research">Autism Spectrum Disorder (ASD) detection</a>, and scaling LLM
+                    silver-label distillation for multilingual sentiment analysis. Before BHBFC, I led AI
+                    development at Peek AI (London), built VML's flagship AI product
+                    <em>Reveal</em>Which is Released EMEA region at Wunderman Thompson, and shipped AI systems for Japan Railway at BJIT Limited.
+                </p>
+
+                <p class="hero-bio">
+                    I am collaborating with researcher from <strong>HAAIM Lab,University of New Orleans,USA</strong>—
+                    On multi-modal based autism detection system using pose, emotion and audio analysis. I particulary helped them to provide the outline system design <strong>Which helped them to secure the grants</strong>.
+                    Currently, i am focusing on <Strong>Autonoumous Vehicle Research</Strong> for South asia region. I am also open to <strong>freelance AI engagements</strong>, <strong>research collaborations</strong>,
+                </p>
+
+                <div class="hero-contact">
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:sharif.ullah@example.com">md.sharif.ullah.forhad@gmail.com</a>
+                    </span>
+                    <span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Dhaka, Bangladesh
+                    </span>
+                </div>
+
+                <div class="social-row">
+                    <a href="https://github.com/forhadsidhu" target="_blank" aria-label="GitHub" title="GitHub">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.7 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.9 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/sharif-ullah/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+                    </a>
+                    <a href="https://www.codechef.com/users/forhadsidhu" target="_blank" aria-label="CodeChef" title="CodeChef">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16"/><path d="M6 18h12l1-6H5z"/><path d="M12 2v6"/><path d="M9 4v4"/><path d="M15 4v4"/></svg>
+                    </a>
+                    <a href="https://drive.google.com/file/d/1ktSxh8OCRgGpXNfTgOxrARZ6equvmEIs/view" target="_blank" aria-label="CV" title="CV / Resume">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- OPENINGS / AVAILABLE FOR -->
+<section id="available">
     <div class="container">
-        <div class="about-grid reveal">
-            <div class="about-text">
-                <p class="section-label">About Me</p>
-                <h2 class="section-title">Engineer. Builder. Researcher.</h2>
-                <p>I'm a passionate software engineer with 5+ years of experience delivering innovative solutions across AI, ERP, and Fintech. I've built production AI products for multinational agencies, government organizations, and startups across Bangladesh, Japan, Saudi Arabia, and the UK.</p>
-                <p>My work spans LLM-powered chatbots and RAG systems, computer vision surveillance platforms, emotion detection engines, multi-agent CRM automations, and full-stack SaaS products. I thrive on turning complex problems into scalable, impactful products.</p>
-                <p>I'm also an active researcher focusing on Autism Spectrum Disorder detection using multimodal deep learning — combining pose estimation, emotion recognition, and audio analysis.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label">Years Experience</div></div>
-                <div class="stat-card"><div class="stat-num">15+</div><div class="stat-label">Projects Delivered</div></div>
-                <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label">AI Products Live</div></div>
-                <div class="stat-card"><div class="stat-num">4</div><div class="stat-label">Countries Served</div></div>
-            </div>
+        <h2 class="section-heading">Available For</h2>
+        <div class="callout reveal">
+            I am open to <strong>freelance AI engagements</strong>, <strong>research collaborations</strong>,
+            and <strong>consulting</strong> on production LLM, RAG, and computer vision systems.
+            I'm particularly interested in projects involving multi-agent architectures,
+            healthcare AI, and multilingual NLP at scale. If you're building something in these areas
+            and want a hands-on engineer who has shipped systems across four countries,
+            please reach out at <a href="mailto:md.sharif.ullah.forhad@gmail.com">md.sharif.ullah.forhad@gmail.com</a>
+            with a brief description of the project.
         </div>
     </div>
 </section>
 
-<hr class="divider">
-
-<!-- AI PROJECTS -->
-<section id="ai-projects">
+<!-- NEWS -->
+<section id="news">
     <div class="container">
-        <div class="reveal">
-            <p class="section-label">Featured Work</p>
-            <h2 class="section-title">AI Projects</h2>
-            <p class="section-desc">Production AI systems I've designed, developed, and deployed — from emotion-aware campaign analytics to multi-agent CRM automation.</p>
-        </div>
-        <div class="projects-grid">
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-ai">AI PRODUCT — VML</span>
-                    <h3>Reveal — Emotion-Driven Campaign Analytics</h3>
-                    <p>Built VML's flagship AI product that analyzes campaign videos by detecting viewer emotions in real-time. Combines emotion detection models, LLMs, Big Data pipelines, and Google Cloud Platform.</p>
-                    <div class="project-tech"><span>Emotion Detection</span><span>LLM</span><span>Big Data</span><span>GCP</span><span>FastAPI</span><span>Streamlit</span></div>
-                    <div class="project-links"><a href="https://www.vml.com/reveal" target="_blank">&#128279; Live App</a></div>
+        <h2 class="section-heading">News</h2>
+        <div class="news-list reveal">
+            <div class="news-item">
+                <div class="news-date">July 2026</div>
+                <div class="news-body">
+                   I just started working on my research project-Autonomous vehicle on South asisan region.
                 </div>
             </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-saas">AI SaaS — HEALTHCARE</span>
-                    <h3>DoctorsTools.life — AI Medical Assistant</h3>
-                    <p>RAG-based AI platform helping doctors analyze medical reports, generate insights, and provide patient support with intelligent document understanding.</p>
-                    <div class="project-tech"><span>RAG</span><span>LLM</span><span>Document AI</span><span>Python</span><span>Healthcare</span></div>
-                    <div class="project-links"><a href="https://doctorstools.life" target="_blank">&#128279; Live App</a></div>
+            <div class="news-item">
+                <div class="news-date">Nov 2025</div>
+                <div class="news-body">
+                    Our paper <em>"From 10K Labels to 72M Classifications: Scaling LLM Silver-Label Distillation for Multilingual Sentiment"</em>
+                    has been <strong>accepted at HHAI-KEML 2026</strong>, co-located with the Hybrid Human Artificial Intelligence Conference.
                 </div>
             </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-saas">AI SaaS — EDTECH</span>
-                    <h3>SmartWorksheetAI — AI for ESL Teachers</h3>
-                    <p>Intelligent worksheet generation platform for ESL teachers with AI-powered question and image generation, customized for language learning.</p>
-                    <div class="project-tech"><span>LLM</span><span>Image Generation</span><span>NLP</span><span>EdTech</span></div>
-                    <div class="project-links"><a href="https://smartworksheetai.com" target="_blank">&#128279; Live App</a></div>
+            <div class="news-item">
+                <div class="news-date">Oct 2025</div>
+                <div class="news-body">
+                    Deployed a real-time production throughput tracking system for a matzoh bakery — YOLOv11 + ByteTrack
+                    over live CCTV feeds, with per-worker calibrated anchor zones.
                 </div>
             </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-ai">MULTI-AGENT AI</span>
-                    <h3>CRM Automation — Multi-Agent System</h3>
-                    <p>Multi-agent AI system automating end-to-end CRM operations using OpenClaw LLM and orchestrated agents for lead management and workflow automation.</p>
-                    <div class="project-tech"><span>Multi-Agent</span><span>OpenClaw LLM</span><span>CRM</span><span>Automation</span></div>
-                    <div class="project-links"><a href="http://173.212.246.248/" target="_blank">&#128279; Live Demo</a></div>
+            <div class="news-item">
+                <div class="news-date">2024</div>
+                <div class="news-body">
+                    Joined <strong>Bangladesh House Building Finance Corporation (BHBFC)</strong> as
+                    Assistant Programmer (Senior Officer). Building the government's <em>eSheba</em> home-loan platform
+                    with Java JEE, Spring Boot, Oracle Cloud, and Flutter.Developed FinTech modules for BHBFC's home-loan platform, including loan application processing, document verification, and automated approval workflows.
+                    .Currently developing RAG based chatbot for BHBFC's customer support, enabling users to inquire about loan status, repayment schedules, and eligibility criteria through natural language conversation. Also developing Flutter based mobile app for BHBFC's home-loan platform, providing users with a seamless experience to apply for loans, track application status, and access personalized financial insights.
                 </div>
             </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-live">LIVE — HOSPITALITY</span>
-                    <h3>AI Hotel Booking Chatbot (Saudi Arabia)</h3>
-                    <p>RAG-based chatbot for the hotel industry — users book rooms, inquire about services, and manage reservations through natural language conversation.</p>
-                    <div class="project-tech"><span>RAG</span><span>LLM</span><span>Chatbot</span><span>Hotel Booking</span></div>
-                    <div class="project-links">
-                        <a href="http://89.117.59.22/" target="_blank">&#128279; Live Chatbot</a>
-                        <a href="https://www.loom.com/share/8294a38e01f04b96abe9c431a68c3161" target="_blank">&#127909; Demo Video</a>
-                    </div>
+            <div class="news-item">
+                <div class="news-date">2024</div>
+                <div class="news-body">
+                    Served as <strong>subreviewer</strong> for the European Conference on Artificial Intelligence (<strong>ECAI 2025</strong>).
                 </div>
             </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-live">LIVE — FINTECH</span>
-                    <h3>AI Chatbot — Govt Financial Org</h3>
-                    <p>RAG-powered chatbot for a government financial organization, assisting with loan inquiries, document guidance, and customer support.</p>
-                    <div class="project-tech"><span>RAG</span><span>LLM</span><span>FinTech</span><span>Government</span></div>
-                    <div class="project-links"><a href="http://159.13.21.93/" target="_blank">&#128279; Live Chatbot</a></div>
+            <div class="news-item">
+                <div class="news-date">2024</div>
+                <div class="news-body">
+                    Led AI CCTV surveillance development at <strong>Peek AI Ltd (London)</strong> —
+                    object detection and pose estimation optimized for CPU inference via OpenVINO.
                 </div>
             </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-ai">COMPUTER VISION</span>
-                    <h3>AI CCTV Surveillance System (London Startup)</h3>
-                    <p>Desktop &amp; web surveillance platform using object detection and pose estimation, optimized for CPU inference with OpenVINO for a London-based startup.</p>
-                    <div class="project-tech"><span>YOLOv8</span><span>OpenVINO</span><span>Pose Estimation</span><span>OpenCV</span><span>Flask</span></div>
-                    <div class="project-links"><a href="https://drive.google.com/file/d/1Fvg-z68nm5hVdaPi7i7DwBbxgGhIiyme/view" target="_blank">&#127909; Demo Video</a></div>
-                </div>
-            </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-ai">FULL-STACK AI</span>
-                    <h3>Falcon AI SmartWay System (Saudi Arabia)</h3>
-                    <p>Complete smart hotel management — web platform + two mobile apps automating entire operations from booking to in-room service with AI chatbots.</p>
-                    <div class="project-tech"><span>Full-Stack</span><span>Mobile Apps</span><span>AI Chatbot</span><span>Automation</span></div>
-                </div>
-            </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-ai">AI — FASHION</span>
-                    <h3>Virtual Trial — Fashion Brand AI</h3>
-                    <p>AI-powered virtual try-on system for fashion brands, enabling customers to visualize clothing using computer vision and generative models.</p>
-                    <div class="project-tech"><span>Computer Vision</span><span>Generative AI</span><span>Fashion Tech</span></div>
-                    <div class="project-links"><a href="http://62.171.138.157/" target="_blank">&#128279; Live Demo</a></div>
-                </div>
-            </div>
-            <div class="project-card reveal">
-                <div class="project-card-body">
-                    <span class="project-badge badge-live">COMPUTER VISION — INDUSTRIAL</span>
-                    <h3>Matzoh Bakery — Real-Time Throughput Tracking</h3>
-                    <p>Real-time production throughput tracking system for a matzoh bakery. YOLOv11 object detection with ByteTrack persistence tracks dough balls through class transition to matzah sheets, assigning per-worker stats via calibrated anchor zones on live CCTV feeds.</p>
-                    <div class="project-tech"><span>YOLOv11</span><span>ByteTrack</span><span>Roboflow</span><span>OpenCV</span><span>Supervision</span><span>RTSP</span><span>Python</span></div>
-                    <div class="project-links"><a href="https://drive.google.com/file/d/1dFf4k6Q4Xx96guiuM5ciRVeiFJDhfM1g/view" target="_blank">&#127909; Demo Video</a></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="chatbot-banner reveal">
-            <h3>&#x1F7E2; Live Chatbots in Production</h3>
-            <div class="chatbot-list">
-                <div class="chatbot-item">
-                    <div class="chatbot-dot"></div>
-                    <div class="chatbot-info">
-                        <strong>Govt Financial Organization</strong>
-                        <span>RAG-based customer support</span><br>
-                        <a href="http://159.13.21.93/" target="_blank">Visit &#8594;</a>
-                    </div>
-                </div>
-                <div class="chatbot-item">
-                    <div class="chatbot-dot"></div>
-                    <div class="chatbot-info">
-                        <strong>Saudi Hotel Booking System</strong>
-                        <span>Conversational room booking</span><br>
-                        <a href="http://89.117.59.22/" target="_blank">Visit &#8594;</a>
-                    </div>
+            <div class="news-item">
+                <div class="news-date">2022</div>
+                <div class="news-body">
+                    Named <strong>Top Performer (FY 2021-22)</strong> at BJIT Limited for ERP development delivered to a Japan-based client.
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<hr class="divider">
-
-<!-- SKILLS -->
-<section id="skills">
+<!-- SELECTED PROJECTS -->
+<section id="projects">
     <div class="container">
-        <div class="reveal">
-            <p class="section-label">Tech Stack</p>
-            <h2 class="section-title">Skills &amp; Technologies</h2>
-        </div>
-        <div class="skills-categories reveal">
-            <div class="skill-group">
-                <h3>Languages</h3>
-                <div class="skill-tags"><span>Python</span><span>Java</span><span>C++</span><span>JavaScript</span><span>Dart</span><span>TypeScript</span></div>
+        <h2 class="section-heading">Selected Projects</h2>
+        <div class="project-list reveal">
+
+            <div class="project-item">
+                <h3 class="project-title">Reveal — Emotion-Driven Campaign Analytics</h3>
+                <div class="project-meta">
+                    <span class="venue">Wunderman Thompson (now VML)</span> · 2022–2024
+                </div>
+                <p class="project-desc">
+                    Built VML's flagship AI product that analyzes campaign videos by detecting viewer emotions in real time.
+                    Combines emotion detection models, LLMs, Big Data pipelines, and Google Cloud Platform.
+                </p>
+                <div class="project-tags">
+                    <span>Emotion Detection</span><span>LLM</span><span>Big Data</span><span>GCP</span><span>FastAPI</span><span>Streamlit</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://www.vml.com/reveal" target="_blank">Live App</a>
+                </div>
             </div>
-            <div class="skill-group">
-                <h3>AI / ML / DL</h3>
-                <div class="skill-tags"><span>PyTorch</span><span>TensorFlow</span><span>LLMs</span><span>RAG</span><span>LangChain</span><span>VLMs</span><span>Multi-Agent Systems</span><span>Prompt Engineering</span></div>
+
+            <div class="project-item">
+                <h3 class="project-title">DoctorsTools.life — AI Medical Assistant</h3>
+                <div class="project-meta">
+                    <span class="venue">Healthcare SaaS</span> · Live in production
+                </div>
+                <p class="project-desc">
+                    RAG-based AI platform helping doctors analyze medical reports, generate insights, and provide patient
+                    support with intelligent document understanding.
+                </p>
+                <div class="project-tags">
+                    <span>RAG</span><span>LLM</span><span>Document AI</span><span>Python</span><span>Healthcare</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://doctorstools.life" target="_blank">Live App</a>
+                </div>
             </div>
-            <div class="skill-group">
-                <h3>Computer Vision</h3>
-                <div class="skill-tags"><span>YOLOv8</span><span>OpenCV</span><span>OpenVINO</span><span>Pose Estimation</span><span>Emotion Detection</span><span>Object Detection</span></div>
+
+            <div class="project-item">
+                <h3 class="project-title">CRM Automation — Multi-Agent System</h3>
+                <div class="project-meta">
+                    <span class="venue">Multi-Agent AI</span> · Live demo
+                </div>
+                <p class="project-desc">
+                    Multi-agent AI system automating end-to-end CRM operations using OpenClaw LLM and orchestrated agents
+                    for lead management, workflow automation, and customer follow-up.
+                </p>
+                <div class="project-tags">
+                    <span>Multi-Agent</span><span>OpenClaw LLM</span><span>CRM</span><span>Automation</span>
+                </div>
+                <div class="project-links">
+                    <a href="http://173.212.246.248/" target="_blank">Live Demo</a>
+                </div>
             </div>
-            <div class="skill-group">
-                <h3>Backend &amp; Frameworks</h3>
-                <div class="skill-tags"><span>Django</span><span>Flask</span><span>FastAPI</span><span>Spring Boot</span><span>Node.js</span></div>
+
+            <div class="project-item">
+                <h3 class="project-title">AI Hotel Booking Chatbot</h3>
+                <div class="project-meta">
+                    <span class="venue">Hospitality · Saudi Arabia</span> · Live in production
+                </div>
+                <p class="project-desc">
+                    RAG-based chatbot for the hotel industry — users book rooms, inquire about services, and manage
+                    reservations through natural language conversation.
+                </p>
+                <div class="project-tags">
+                    <span>RAG</span><span>LLM</span><span>Chatbot</span><span>Hotel Booking</span>
+                </div>
+                <div class="project-links">
+                    <a href="http://89.117.59.22/" target="_blank">Live Chatbot</a>
+                    <a href="https://www.loom.com/share/8294a38e01f04b96abe9c431a68c3161" target="_blank">Demo Video</a>
+                </div>
             </div>
-            <div class="skill-group">
-                <h3>Cloud &amp; DevOps</h3>
-                <div class="skill-tags"><span>AWS</span><span>GCP</span><span>Terraform</span><span>Docker</span><span>CI/CD</span><span>Cloud Functions</span><span>Cloud Run</span></div>
+
+            <div class="project-item">
+                <h3 class="project-title">AI Chatbot for Government Financial Organization</h3>
+                <div class="project-meta">
+                    <span class="venue">FinTech · Government</span> · Live in production
+                </div>
+                <p class="project-desc">
+                    RAG-powered chatbot for a government financial organization, assisting with loan inquiries, document
+                    guidance, and customer support in Bengali and English.
+                </p>
+                <div class="project-tags">
+                    <span>RAG</span><span>LLM</span><span>FinTech</span><span>Government</span>
+                </div>
+                <div class="project-links">
+                    <a href="http://159.13.21.93/" target="_blank">Live Chatbot</a>
+                </div>
             </div>
-            <div class="skill-group">
-                <h3>Mobile &amp; Frontend</h3>
-                <div class="skill-tags"><span>Flutter</span><span>React</span><span>Streamlit</span><span>HTML/CSS</span></div>
+
+            <div class="project-item">
+                <h3 class="project-title">AI CCTV Surveillance System</h3>
+                <div class="project-meta">
+                    <span class="venue">Peek AI Ltd (London)</span> · 2024
+                </div>
+                <p class="project-desc">
+                    Desktop and web surveillance platform using object detection and pose estimation, optimized for CPU
+                    inference with OpenVINO for a London-based startup.
+                </p>
+                <div class="project-tags">
+                    <span>YOLOv8</span><span>OpenVINO</span><span>Pose Estimation</span><span>OpenCV</span><span>Flask</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1Fvg-z68nm5hVdaPi7i7DwBbxgGhIiyme/view" target="_blank">Demo Video</a>
+                </div>
             </div>
+
+            <div class="project-item">
+                <h3 class="project-title">Matzoh Bakery — Real-Time Throughput Tracking</h3>
+                <div class="project-meta">
+                    <span class="venue">Industrial Computer Vision</span> · 2025
+                </div>
+                <p class="project-desc">
+                    Real-time production throughput tracking for a matzoh bakery. YOLOv11 detection with ByteTrack
+                    persistence tracks dough balls through the class transition to matzah sheets, assigning per-worker
+                    stats via calibrated anchor zones on live CCTV feeds.
+                </p>
+                <div class="project-tags">
+                    <span>YOLOv11</span><span>ByteTrack</span><span>Roboflow</span><span>OpenCV</span><span>Supervision</span><span>RTSP</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1dFf4k6Q4Xx96guiuM5ciRVeiFJDhfM1g/view" target="_blank">Demo Video</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3 class="project-title">SmartWorksheetAI — AI for ESL Teachers</h3>
+                <div class="project-meta">
+                    <span class="venue">EdTech SaaS</span> · Live in production
+                </div>
+                <p class="project-desc">
+                    Intelligent worksheet generation platform for ESL teachers with AI-powered question and image
+                    generation, customized for language learning.
+                </p>
+                <div class="project-tags">
+                    <span>LLM</span><span>Image Generation</span><span>NLP</span><span>EdTech</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://smartworksheetai.com" target="_blank">Live App</a>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3 class="project-title">Falcon AI SmartWay System</h3>
+                <div class="project-meta">
+                    <span class="venue">Full-Stack AI · Saudi Arabia</span>
+                </div>
+                <p class="project-desc">
+                    Complete smart hotel management — web platform + two mobile apps automating end-to-end operations
+                    from booking to in-room service with AI chatbots.
+                </p>
+                <div class="project-tags">
+                    <span>Full-Stack</span><span>Mobile Apps</span><span>AI Chatbot</span><span>Automation</span>
+                </div>
+            </div>
+
+            <div class="project-item">
+                <h3 class="project-title">Virtual Trial — Fashion Brand AI</h3>
+                <div class="project-meta">
+                    <span class="venue">Generative AI · Fashion</span> · Live demo
+                </div>
+                <p class="project-desc">
+                    AI-powered virtual try-on system for fashion brands, enabling customers to visualize clothing using
+                    computer vision and generative models.
+                </p>
+                <div class="project-tags">
+                    <span>Computer Vision</span><span>Generative AI</span><span>Fashion Tech</span>
+                </div>
+                <div class="project-links">
+                    <a href="http://62.171.138.157/" target="_blank">Live Demo</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
-
-<hr class="divider">
 
 <!-- EXPERIENCE -->
 <section id="experience">
     <div class="container">
-        <div class="reveal">
-            <p class="section-label">Career</p>
-            <h2 class="section-title">Work Experience</h2>
-        </div>
+        <h2 class="section-heading">Experience</h2>
         <div class="timeline reveal">
+
             <div class="timeline-item">
-                <h3>Assistant Programmer (Senior Officer)</h3>
-                <div class="time">Bangladesh House Building Finance Corp (BHBFC) — 2024 – Present</div>
-                <p>Developing home loan software "eSheba" and mobile applications for this government financial organization. Building FinTech modules with Java JEE, Spring Boot, Oracle Cloud, and Flutter.</p>
+                <div class="timeline-date">2024 – Present</div>
+                <div>
+                    <div class="timeline-role">Assistant Programmer (Senior Officer)</div>
+                    <div class="timeline-company">Bangladesh House Building Finance Corporation (BHBFC)</div>
+                    <p class="timeline-desc">
+                        Developing the government's home-loan platform <em>eSheba</em> and associated mobile applications.
+                        Building FinTech modules with Java JEE, Spring Boot, Oracle Cloud, and Flutter.
+                    </p>
+                </div>
             </div>
+
             <div class="timeline-item">
-                <h3>Lead Developer</h3>
-                <div class="time">Peek AI Ltd (London) — Feb 2024 – Aug 2024</div>
-                <p>Led development of AI CCTV surveillance using object detection and pose estimation. Built desktop and web apps with optimized CPU inference via OpenVINO and YOLOv8.</p>
+                <div class="timeline-date">Feb 2024 – Aug 2024</div>
+                <div>
+                    <div class="timeline-role">Lead Developer</div>
+                    <div class="timeline-company">Peek AI Ltd, London</div>
+                    <p class="timeline-desc">
+                        Led development of AI CCTV surveillance using object detection and pose estimation.
+                        Built desktop and web apps with CPU-optimized inference via OpenVINO and YOLOv8.
+                    </p>
+                </div>
             </div>
+
             <div class="timeline-item">
-                <h3>System Developer</h3>
-                <div class="time">Wunderman Thompson (now VML), Dhaka — Sept 2022 – Feb 2024</div>
-                <p>Developed VML's MVP AI product "Reveal" — emotion-aware campaign analytics. Built ETL pipelines, dashboards, and backend services on GCP. Worked on micro-expression deep learning models.</p>
+                <div class="timeline-date">Sept 2022 – Feb 2024</div>
+                <div>
+                    <div class="timeline-role">System Developer</div>
+                    <div class="timeline-company">Wunderman Thompson (now VML), Dhaka</div>
+                    <p class="timeline-desc">
+                        Developed VML's MVP AI product <em>Reveal</em> — emotion-aware campaign analytics.
+                        Built ETL pipelines, dashboards, and backend services on GCP.
+                        Worked on micro-expression deep-learning models.
+                    </p>
+                </div>
             </div>
+
             <div class="timeline-item">
-                <h3>Senior Software Engineer</h3>
-                <div class="time">BJIT Limited — Sept 2021 – May 2022</div>
-                <p>Developed a comprehensive ERP system for a Japan-based software company.</p>
-                <span class="badge-award">&#11088; Top Performer (FY 2021-22)</span>
+                <div class="timeline-date">Sept 2021 – May 2022</div>
+                <div>
+                    <div class="timeline-role">Senior Software Engineer</div>
+                    <div class="timeline-company">BJIT Limited</div>
+                    <p class="timeline-desc">
+                        Developed a comprehensive ERP system for a Japan-based software company.
+                    </p>
+                    <span class="badge-award">★ Top Performer (FY 2021-22)</span>
+                </div>
             </div>
+
             <div class="timeline-item">
-                <h3>Software Engineer (AI)</h3>
-                <div class="time">BJIT Limited — Jan 2019 – Aug 2021</div>
-                <p>Built AI applications for Japan Railway — train detection, human activity recognition, rail-crossing surveillance. Developed pose estimation and Bengali OCR using deep learning.</p>
+                <div class="timeline-date">Jan 2019 – Aug 2021</div>
+                <div>
+                    <div class="timeline-role">Software Engineer (AI)</div>
+                    <div class="timeline-company">BJIT Limited</div>
+                    <p class="timeline-desc">
+                        Built AI applications for Japan Railway — train detection, human activity recognition, and
+                        rail-crossing surveillance. Developed pose estimation and Bengali OCR using deep learning.
+                    </p>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
 
-<hr class="divider">
-
-<!-- FREELANCE -->
-<section id="freelance">
+<!-- SKILLS -->
+<section id="skills">
     <div class="container">
-        <div class="reveal">
-            <p class="section-label">Freelancing</p>
-            <h2 class="section-title">Freelance &amp; Side Projects</h2>
-            <p class="section-desc">Actively collaborating with international clients as an AI engineer, building custom AI solutions and automation tools.</p>
-        </div>
-        <div class="freelance-grid reveal">
-            <div class="freelance-card">
-                <span class="project-badge badge-ai">COMPUTER VISION</span>
-                <h3>JUGGLE MVP — Smart Ad Display</h3>
-                <p>Intelligent advertising that customizes digital banners based on real-time age and gender detection using YOLOv8 and OpenVINO.</p>
-                <div class="project-tech"><span>YOLOv8</span><span>OpenVINO</span><span>React</span><span>Flask</span></div>
+        <h2 class="section-heading">Skills</h2>
+        <div class="skills-grid reveal">
+            <div class="skill-group skill-group--highlight">
+                <h3>Kitchen 🍳 <span class="skill-hl">— Most valuable skill of mine</span></h3>
+                <div class="skill-tags">
+                    <span>Bengali Cuisine</span><span>Kacchi Biryani</span><span>Shorshe Ilish</span><span>Bhuna</span><span>Khichuri</span><span>Bhorta</span><span>Roshogolla</span><span>South Asian</span>
+                </div>
             </div>
-            <div class="freelance-card">
-                <span class="project-badge badge-ai">NLP / AI</span>
-                <h3>Personal Assistant — Call Scheduler</h3>
-                <p>Smart assistant that listens to phone calls, identifies meeting intents, and auto-schedules events in Google Calendar with transcription.</p>
-                <div class="project-tech"><span>Whisper</span><span>NLP</span><span>Google Calendar API</span></div>
-            </div>
-            <div class="freelance-card">
-                <span class="project-badge badge-ai">AUTOMATION</span>
-                <h3>Data Annotator — 25K Auto-Labels</h3>
-                <p>Scalable auto-annotation tool using object detection and pose estimation to label 25,000+ data samples automatically.</p>
-                <div class="project-tech"><span>Object Detection</span><span>Pose Estimation</span><span>Pipeline</span></div>
-            </div>
-            <div class="freelance-card">
-                <span class="project-badge badge-ai">LLM AGENTS</span>
-                <h3>Business Automation AI Agent</h3>
-                <p>Intelligent agents automating customer phone calls, SMS, and emails driven by LLM responses tailored to business content.</p>
-                <div class="project-tech"><span>Google Voice</span><span>LLM</span><span>OpenAI</span></div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<hr class="divider">
-
-<!-- EDUCATION -->
-<section id="education">
-    <div class="container">
-        <div class="reveal">
-            <p class="section-label">Education</p>
-            <h2 class="section-title">Academic Background</h2>
-        </div>
-        <div class="edu-card reveal">
-            <h3>B.Sc. in Computer Science &amp; Engineering</h3>
-            <p>Chittagong University of Engineering &amp; Technology (CUET) — one of the premier government engineering universities in Bangladesh.</p>
-        </div>
-        <div class="edu-card reveal" style="margin-top: 1.5rem;">
-            <h3>IELTS Academic — Overall Band 6.5</h3>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.8rem;">
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1.2rem; text-align: center; min-width: 80px;">
-                    <div style="font-size: 1.5rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">7.0</div>
-                    <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em;">WRITING</div>
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <div class="skill-tags">
+                    <span>Python</span><span>Java</span><span>C++</span><span>JavaScript</span><span>TypeScript</span><span>Dart</span>
                 </div>
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1.2rem; text-align: center; min-width: 80px;">
-                    <div style="font-size: 1.5rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">6.5</div>
-                    <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em;">LISTENING</div>
+            </div>
+            <div class="skill-group">
+                <h3>AI / ML / DL</h3>
+                <div class="skill-tags">
+                    <span>PyTorch</span><span>TensorFlow</span><span>LLMs</span><span>RAG</span><span>LangChain</span><span>VLMs</span><span>Multi-Agent Systems</span><span>Prompt Engineering</span>
                 </div>
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1.2rem; text-align: center; min-width: 80px;">
-                    <div style="font-size: 1.5rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">6.0</div>
-                    <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em;">READING</div>
+            </div>
+            <div class="skill-group">
+                <h3>Computer Vision</h3>
+                <div class="skill-tags">
+                    <span>YOLOv8/v11</span><span>OpenCV</span><span>OpenVINO</span><span>Pose Estimation</span><span>Emotion Detection</span><span>ByteTrack</span>
                 </div>
-                <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem 1.2rem; text-align: center; min-width: 80px;">
-                    <div style="font-size: 1.5rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">6.0</div>
-                    <div style="font-size: 0.72rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em;">SPEAKING</div>
+            </div>
+            <div class="skill-group">
+                <h3>Backend &amp; Frameworks</h3>
+                <div class="skill-tags">
+                    <span>Django</span><span>Flask</span><span>FastAPI</span><span>Spring Boot</span><span>Node.js</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Cloud &amp; DevOps</h3>
+                <div class="skill-tags">
+                    <span>AWS</span><span>GCP</span><span>Terraform</span><span>Docker</span><span>CI/CD</span><span>Cloud Run</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3>Mobile &amp; Frontend</h3>
+                <div class="skill-tags">
+                    <span>Flutter</span><span>React</span><span>Streamlit</span><span>HTML/CSS</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<hr class="divider">
 
 <!-- RESEARCH -->
 <section id="research">
     <div class="container">
+        <h2 class="section-heading">Research &amp; Publications</h2>
         <div class="reveal">
-            <p class="section-label">Research</p>
-            <h2 class="section-title">Research &amp; Publications</h2>
-            <p class="section-desc">Focused on multimodal Autism Spectrum Disorder (ASD) detection using pose, emotion, audio, and video analysis.</p>
-        </div>
-        <div class="research-grid reveal">
-            <div class="research-card">
-                <span class="tag tag-accepted">Accepted</span>
-                <h3>From 10K Labels to 72M Classifications: Scaling LLM Silver-Label Distillation for Multilingual Sentiment</h3>
-                <p>
-                    Accepted at <strong>HHAI-KEML 2026</strong>, co-located with the 
-                    Hybrid Human Artificial Intelligence Conference (HHAI 2026). The paper 
-                    presents a scalable knowledge distillation framework that transfers 
-                    GPT-4o-mini silver labels to XLM-RoBERTa for cost-effective multilingual 
-                    sentiment analysis across 72.3 million social media comments.
+
+            <div class="research-item">
+                <span class="status-tag tag-accepted">Accepted</span>
+                <h3 class="project-title">From 10K Labels to 72M Classifications: Scaling LLM Silver-Label Distillation for Multilingual Sentiment</h3>
+                <div class="project-meta">
+                    <span class="venue">HHAI-KEML 2026</span> · co-located with HHAI 2026
+                </div>
+                <p class="project-desc">
+                    A scalable knowledge distillation framework that transfers GPT-4o-mini silver labels to XLM-RoBERTa
+                    for cost-effective multilingual sentiment analysis across 72.3 million social media comments.
                 </p>
             </div>
 
-            <div class="research-card">
-                <span class="tag tag-review">Under Review</span>
-                <h3>Facial Expression Recognition as a Step Towards Multimodal Behavior Analysis of Children with ASD</h3>
-                <p>Focusing on facial expression recognition for children with ASD to improve multimodal behavior analysis.</p>
+            <div class="research-item">
+                <span class="status-tag tag-review">Under Review</span>
+                <h3 class="project-title">Facial Expression Recognition as a Step Towards Multimodal Behavior Analysis of Children with ASD</h3>
+                <p class="project-desc">
+                    Focuses on facial expression recognition for children with Autism Spectrum Disorder to enable
+                    downstream multimodal behavior analysis.
+                </p>
             </div>
-            <div class="research-card">
-                <span class="tag tag-prep">Manuscript in Preparation</span>
-                <h3>RAG-based ASD Detection Using Pose and Emotion Data</h3>
-                <p>Using RAG-based models for detecting Autism Spectrum Disorder through pose estimation and emotion data analysis.</p>
+
+            <div class="research-item">
+                <span class="status-tag tag-prep">Manuscript in Preparation</span>
+                <h3 class="project-title">RAG-Based ASD Detection Using Pose and Emotion Data</h3>
+                <p class="project-desc">
+                    Uses retrieval-augmented models for detecting Autism Spectrum Disorder through combined pose
+                    estimation and emotion recognition signals.
+                </p>
             </div>
-            <div class="research-card">
-                <span class="tag tag-sub">Subreviewer</span>
-                <h3>ECAI 2025 — European Conference on AI</h3>
-                <p>Served as subreviewer for ECAI 2025, reviewing papers in AI and machine learning.</p>
+
+            <div class="research-item">
+                <span class="status-tag tag-sub">Service</span>
+                <h3 class="project-title">Subreviewer — ECAI 2025</h3>
+                <p class="project-desc">
+                    Served as subreviewer for the European Conference on Artificial Intelligence (ECAI) 2025, reviewing
+                    submissions in AI and machine learning.
+                </p>
             </div>
+
         </div>
     </div>
 </section>
 
-<hr class="divider">
-
-<!-- COMPETITIVE PROGRAMMING -->
-<section id="cp">
+<!-- EDUCATION -->
+<section id="education">
     <div class="container">
+        <h2 class="section-heading">Education</h2>
         <div class="reveal">
-            <p class="section-label">Problem Solving</p>
-            <h2 class="section-title">Competitive Programming</h2>
-        </div>
-        <div class="cp-grid reveal">
-            <div class="cp-card">
-                <h4>CodeChef</h4>
-                <p>Highest Rating: 1767</p>
-                <a href="https://www.codechef.com/users/forhadsidhu" target="_blank">View Profile &#8594;</a>
+            <div class="edu-item">
+                <div class="edu-school">Chittagong University of Engineering &amp; Technology (CUET)</div>
+                <div class="edu-degree">B.Sc. in Computer Science &amp; Engineering</div>
+                <div class="edu-date">One of the premier government engineering universities in Bangladesh.</div>
             </div>
-            <div class="cp-card">
-                <h4>CodeForces</h4>
-                <p>Greedy, Segment Trees</p>
-                <a href="http://codeforces.com/profile/forhadsidhu" target="_blank">View Profile &#8594;</a>
-            </div>
-            <div class="cp-card">
-                <h4>HackerEarth</h4>
-                <p>Hackathons &amp; Challenges</p>
-                <a href="https://www.hackerearth.com/@sharif2" target="_blank">View Profile &#8594;</a>
-            </div>
-            <div class="cp-card">
-                <h4>SPOJ</h4>
-                <p>300+ Problems Solved</p>
-                <a href="https://www.spoj.com/users/forhad__sidhu/" target="_blank">View Profile &#8594;</a>
-            </div>
-        </div>
-    </div>
-</section>
 
-<hr class="divider">
-
-<!-- CONTACT -->
-<section id="contact" class="contact-section">
-    <div class="container">
-        <div class="reveal">
-            <p class="section-label">Get in Touch</p>
-            <h2 class="section-title">Let's Build Something Great</h2>
-        </div>
-        <div class="contact-grid reveal">
-            <div class="contact-info">
-                <p>I'm always open to discussing AI projects, freelance opportunities, research collaborations, or just a good tech conversation.</p>
-                <div class="contact-links">
-                    <a href="#">&#128205; Dhaka, Bangladesh</a>
-                    <a href="https://github.com/forhadsidhu" target="_blank">&#128279; GitHub</a>
-                    <a href="https://www.linkedin.com/in/sharif-ullah/" target="_blank">&#128279; LinkedIn</a>
+            <div class="edu-item" style="margin-top: 1.5rem;">
+                <div class="edu-school">IELTS Academic — Overall Band 6.5</div>
+                <div class="ielts-scores">
+                    <div><div class="num">7.0</div><div class="lbl">WRITING</div></div>
+                    <div><div class="num">6.5</div><div class="lbl">LISTENING</div></div>
+                    <div><div class="num">6.0</div><div class="lbl">READING</div></div>
+                    <div><div class="num">6.0</div><div class="lbl">SPEAKING</div></div>
                 </div>
             </div>
-            <div class="contact-form">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <input type="text" placeholder="Subject">
-                <textarea placeholder="Your Message"></textarea>
-                <button class="btn btn-primary" style="align-self: flex-start;">Send Message &#8594;</button>
-            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MISC -->
+<section id="misc">
+    <div class="container">
+        <h2 class="section-heading">Misc</h2>
+        <ul class="misc-list reveal">
+            <li>💻 Competitive programmer — CodeChef highest rating <strong>1767</strong>, 300+ problems solved on SPOJ, active on Codeforces (greedy, segment trees).</li>
+            <li>🌏 Have shipped production AI across <strong>Bangladesh, Japan, Saudi Arabia, and the UK</strong> — every country has taught me something different about how AI actually lands.</li>
+            <li>🧪 Currently curious about agentic RL for tool use and how far small models can go with the right verification loop.</li>
+            <li>🎯 Firm believer that a working Streamlit demo beats a beautiful slide deck, every single time.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-heading">Contact</h2>
+        <div class="contact-card reveal">
+            <p>
+                I'm always open to discussing AI projects, freelance opportunities, research collaborations,
+                or just a good technical conversation.
+            </p>
+            <p>
+                📧 <a href="mailto:md.sharif.ullah.forhad@gmail.com">md.sharif.ullah.forhad@gmail.com</a> &nbsp;&middot;&nbsp;
+                📍 Dhaka, Bangladesh
+            </p>
+            <p>
+                <a href="https://github.com/forhadsidhu" target="_blank">GitHub</a> &nbsp;&middot;&nbsp;
+                <a href="https://www.linkedin.com/in/sharif-ullah/" target="_blank">LinkedIn</a> &nbsp;&middot;&nbsp;
+                <a href="https://drive.google.com/file/d/1ktSxh8OCRgGpXNfTgOxrARZ6equvmEIs/view" target="_blank">CV / Resume</a>
+            </p>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 Sharif Ullah. Crafted with passion.</p>
+    <p>© 2026 Sharif Ullah. All rights reserved.</p>
 </footer>
 
 <script>
+    // Mobile nav toggle
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('navLinks');
     hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('active')));
 
+    // Reveal on scroll
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.08 });
     revealElements.forEach(el => observer.observe(el));
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navA = document.querySelectorAll('.nav-links a');
+    function setActive() {
+        let current = 'home';
+        const scrollY = window.pageYOffset;
+        sections.forEach(sec => {
+            const top = sec.offsetTop - 100;
+            if (scrollY >= top) current = sec.id;
+        });
+        navA.forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+        });
+    }
+    window.addEventListener('scroll', setActive);
 </script>
 
 </body>
