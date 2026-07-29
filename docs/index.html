@@ -71,6 +71,23 @@
             padding: 1rem 2rem;
             display: flex; justify-content: space-between; align-items: center;
         }
+
+        .highlight-text {
+                color: #ff3b30;
+                font-size: 1.1rem;
+                font-weight: 700;
+                text-align: center;
+                margin-top: -8px;
+                margin-bottom: 30px;
+                letter-spacing: 0.5px;
+                animation: pulse 2s infinite;
+            }
+
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.75; }
+            }
+
         .nav-brand {
             font-family: var(--font-serif); font-weight: 900;
             font-size: 1.25rem; color: var(--text); text-decoration: none;
@@ -505,6 +522,7 @@
                 <div class="news-body">
                    I just started working on my research project-Autonomous vehicle on South asisan region.
                 </div>
+            
             </div>
             <div class="news-item">
                 <div class="news-date">Nov 2025</div>
@@ -556,6 +574,10 @@
 <section id="projects">
     <div class="container">
         <h2 class="section-heading">Selected Projects</h2>
+        <p class="highlight-text">
+             Developed <strong>5+ AI MVP products</strong> as a <strong>Solo AI Developer</strong>.
+        </p>
+
         <div class="project-list reveal">
 
             <div class="project-item">
@@ -572,6 +594,9 @@
                 </div>
                 <div class="project-links">
                     <a href="https://www.instagram.com/p/CxYJZlnqe07/" target="_blank">Live App</a>
+                </div>
+                <div class="highlight-text">
+                        Released this APP in EMEA region at Wunderman Thompson. It is a SaaS product which is used by marketing team to analyze the campaign videos and get the insights about the campaign performance.
                 </div>
             </div>
 
