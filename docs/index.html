@@ -383,6 +383,50 @@
             color: var(--text-body); font-size: 0.98rem;
         }
 
+
+         .achievement-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 auto 35px;
+    padding: 14px 24px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #ff4d4f, #ff7a45);
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(255, 77, 79, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.achievement-banner strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+.achievement-icon {
+    font-size: 1.4rem;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@media (max-width: 768px) {
+    .achievement-banner {
+        display: flex;
+        border-radius: 18px;
+        font-size: 0.95rem;
+        padding: 14px 18px;
+    }
+}
+
+
         /* ============ CONTACT ============ */
         .contact-card {
             background: var(--callout-bg);
@@ -597,9 +641,13 @@
 <section id="projects">
     <div class="container">
         <h2 class="section-heading">Selected Projects</h2>
-        <p class="highlight-text">
-             Developed <strong>5+ AI MVP products</strong> as a <strong>Solo AI Developer</strong>.
-        </p>
+        <div class="achievement-banner">
+            <span class="achievement-icon"></span>
+            <span>
+                <strong>Built & Delivered 5+ AI MVPs</strong> independently —
+                from <strong>idea → architecture → deployment</strong>.
+            </span>
+        </div>
 
         <div class="project-list reveal">
 
